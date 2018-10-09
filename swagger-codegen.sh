@@ -50,10 +50,8 @@ sed -i '/.*if finished_at is None:/,+1 d' "amun/swagger_client/models/inspection
 sed -i '/.*if reason is None:/,+1 d' "amun/swagger_client/models/inspection_job_status_response_status.py"
 sed -i '/.*if started_at is None:/,+1 d' "amun/swagger_client/models/inspection_job_status_response_status.py"
 
-# TODO: we should create separate models for Build and Job
-# for now this is ok, but keep this in mind :)
-#sed -i '/.*if container is None:/,+1 d' "amun/swagger_client/models/inspection_build_status_response_status.py"
-#sed -i '/.*if exit_code is None:/,+1 d' "amun/swagger_client/models/inspection_build_status_response_status.py"
-#sed -i '/.*if finished_at is None:/,+1 d' "amun/swagger_client/models/inspection_build_status_response_status.py"
-#sed -i '/.*if reason is None:/,+1 d' "amun/swagger_client/models/inspection_build_status_response_status.py"
-#sed -i '/.*if started_at is None:/,+1 d' "amun/swagger_client/models/inspection_build_status_response_status.py"
+sed -i '/.*if container is None:/,+1 d' "amun/swagger_client/models/inspection_build_status_response_status.py"
+sed -i '/.*if exit_code is None:/,+1 d' "amun/swagger_client/models/inspection_build_status_response_status.py"
+sed -i '/.*if finished_at is None:/,+1 d' "amun/swagger_client/models/inspection_build_status_response_status.py"
+sed -i '/.*if reason is None:/,+1 d' "amun/swagger_client/models/inspection_build_status_response_status.py"
+sed -i '/.*if started_at is None:/,+1 d' "amun/swagger_client/models/inspection_build_status_response_status.py"

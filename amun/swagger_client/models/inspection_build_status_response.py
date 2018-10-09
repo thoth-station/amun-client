@@ -16,7 +16,7 @@ import re  # noqa: F401
 
 import six
 
-from amun.swagger_client.models.inspection_job_status_response_status import InspectionJobStatusResponseStatus  # noqa: F401,E501
+from amun.swagger_client.models.inspection_build_status_response_status import InspectionBuildStatusResponseStatus  # noqa: F401,E501
 
 
 class InspectionBuildStatusResponse(object):
@@ -33,7 +33,7 @@ class InspectionBuildStatusResponse(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'status': 'InspectionJobStatusResponseStatus',
+        'status': 'InspectionBuildStatusResponseStatus',
         'parameters': 'object'
     }
 
@@ -58,7 +58,7 @@ class InspectionBuildStatusResponse(object):
 
 
         :return: The status of this InspectionBuildStatusResponse.  # noqa: E501
-        :rtype: InspectionJobStatusResponseStatus
+        :rtype: InspectionBuildStatusResponseStatus
         """
         return self._status
 
@@ -68,7 +68,7 @@ class InspectionBuildStatusResponse(object):
 
 
         :param status: The status of this InspectionBuildStatusResponse.  # noqa: E501
-        :type: InspectionJobStatusResponseStatus
+        :type: InspectionBuildStatusResponseStatus
         """
         if status is None:
             raise ValueError("Invalid value for `status`, must not be `None`")  # noqa: E501

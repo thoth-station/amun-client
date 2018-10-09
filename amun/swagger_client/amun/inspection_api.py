@@ -237,7 +237,7 @@ class InspectionApi(object):
 
         :param async_req bool
         :param str inspection_id: Id of inspection run. (required)
-        :return: InspectionRunLogResponse
+        :return: InspectionJobLogResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -258,7 +258,7 @@ class InspectionApi(object):
 
         :param async_req bool
         :param str inspection_id: Id of inspection run. (required)
-        :return: InspectionRunLogResponse
+        :return: InspectionJobLogResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -316,7 +316,7 @@ class InspectionApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='InspectionRunLogResponse',  # noqa: E501
+            response_type='InspectionJobLogResponse',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),

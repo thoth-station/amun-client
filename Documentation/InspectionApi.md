@@ -104,7 +104,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_inspect_job_log**
-> InspectionRunLogResponse get_inspect_job_log(inspection_id)
+> InspectionJobLogResponse get_inspect_job_log(inspection_id)
 
 Get log for a specific inspection run.
 
@@ -136,7 +136,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InspectionRunLogResponse**](InspectionRunLogResponse.md)
+[**InspectionJobLogResponse**](InspectionJobLogResponse.md)
 
 ### Authorization
 
@@ -150,7 +150,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_inspect_job_status**
-> InspectionRunStatusResponse get_inspect_job_status(inspection_id)
+> InspectionJobStatusResponse get_inspect_job_status(inspection_id)
 
 Get status of the application run.
 
@@ -182,7 +182,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InspectionRunStatusResponse**](InspectionRunStatusResponse.md)
+[**InspectionJobStatusResponse**](InspectionJobStatusResponse.md)
 
 ### Authorization
 
