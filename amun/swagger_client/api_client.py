@@ -23,9 +23,9 @@ import tempfile
 import six
 from six.moves.urllib.parse import quote
 
-from amun.swagger_client.amun.swagger_client.configuration import Configuration
+from amun.swagger_client.configuration import Configuration
 import amun.swagger_client.models
-from amun.swagger_client.amun.swagger_client import rest
+from amun.swagger_client import rest
 
 
 class ApiClient(object):

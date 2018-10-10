@@ -112,7 +112,7 @@ class InspectionResponse(object):
     def build_created(self):
         """Gets the build_created of this InspectionResponse.  # noqa: E501
 
-        True if the build was scheduled for the given  # noqa: E501
+        True if the build was scheduled for the given.  # noqa: E501
 
         :return: The build_created of this InspectionResponse.  # noqa: E501
         :rtype: bool
@@ -123,7 +123,7 @@ class InspectionResponse(object):
     def build_created(self, build_created):
         """Sets the build_created of this InspectionResponse.
 
-        True if the build was scheduled for the given  # noqa: E501
+        True if the build was scheduled for the given.  # noqa: E501
 
         :param build_created: The build_created of this InspectionResponse.  # noqa: E501
         :type: bool
