@@ -36,7 +36,7 @@ java -jar swagger-codegen/modules/swagger-codegen-cli/target/swagger-codegen-cli
     -o swagger-codegen-output/ \
     -c swagger-codegen.json
 
-rm -rf amun/swagger_client
+rm -rf amun/swagger_client Documentation
 cp -r swagger-codegen-output/amun/swagger_client/ amun/swagger_client
 # There is a bug in swagger-codegen - it does not respect sub-package for some files, this is a simple workaround.
 find swagger-codegen-output/amun.swagger_client/ -iname '*.py' -exec sed -i '/from amun.swagger_client/! s/^from amun\.\(.*\)/from amun.swagger_client.amun.\1/' {} \+
@@ -44,14 +44,15 @@ cp -r swagger-codegen-output/amun.swagger_client/* amun/swagger_client
 cp -r swagger-codegen-output/docs Documentation
 
 # Nullable values are not recognized by swagger-codegen.sh.
-sed -i '/.*if container is None:/,+1 d' "amun/swagger_client/models/inspection_job_status_response_status.py"
-sed -i '/.*if exit_code is None:/,+1 d' "amun/swagger_client/models/inspection_job_status_response_status.py"
-sed -i '/.*if finished_at is None:/,+1 d' "amun/swagger_client/models/inspection_job_status_response_status.py"
-sed -i '/.*if reason is None:/,+1 d' "amun/swagger_client/models/inspection_job_status_response_status.py"
-sed -i '/.*if started_at is None:/,+1 d' "amun/swagger_client/models/inspection_job_status_response_status.py"
+sed -i '/.*if container is None:/,+1 d' "amun/swagger_client/models/inspection_status_response_build.py"
+sed -i '/.*if exit_code is None:/,+1 d' "amun/swagger_client/models/inspection_status_response_build.py"
+sed -i '/.*if finished_at is None:/,+1 d' "amun/swagger_client/models/inspection_status_response_build.py"
+sed -i '/.*if reason is None:/,+1 d' "amun/swagger_client/models/inspection_status_response_build.py"
+sed -i '/.*if started_at is None:/,+1 d' "amun/swagger_client/models/inspection_status_response_build.py"
 
-sed -i '/.*if container is None:/,+1 d' "amun/swagger_client/models/inspection_build_status_response_status.py"
-sed -i '/.*if exit_code is None:/,+1 d' "amun/swagger_client/models/inspection_build_status_response_status.py"
-sed -i '/.*if finished_at is None:/,+1 d' "amun/swagger_client/models/inspection_build_status_response_status.py"
-sed -i '/.*if reason is None:/,+1 d' "amun/swagger_client/models/inspection_build_status_response_status.py"
-sed -i '/.*if started_at is None:/,+1 d' "amun/swagger_client/models/inspection_build_status_response_status.py"
+sed -i '/.*if container is None:/,+1 d' "amun/swagger_client/models/inspection_status_response_job.py"
+sed -i '/.*if exit_code is None:/,+1 d' "amun/swagger_client/models/inspection_status_response_job.py"
+sed -i '/.*if finished_at is None:/,+1 d' "amun/swagger_client/models/inspection_status_response_job.py"
+sed -i '/.*if reason is None:/,+1 d' "amun/swagger_client/models/inspection_status_response_job.py"
+sed -i '/.*if started_at is None:/,+1 d' "amun/swagger_client/models/inspection_status_response_job.py"
+
