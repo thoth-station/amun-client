@@ -54,7 +54,7 @@ class InspectionJobLogResponse(object):
     def log(self):
         """Gets the log of this InspectionJobLogResponse.  # noqa: E501
 
-        Analyzer logs printed to stdout/stderr as a plain text.  # noqa: E501
+        Inspection job logs printed to stdout/stderr as a plain text.  # noqa: E501
 
         :return: The log of this InspectionJobLogResponse.  # noqa: E501
         :rtype: str
@@ -65,7 +65,7 @@ class InspectionJobLogResponse(object):
     def log(self, log):
         """Sets the log of this InspectionJobLogResponse.
 
-        Analyzer logs printed to stdout/stderr as a plain text.  # noqa: E501
+        Inspection job logs printed to stdout/stderr as a plain text.  # noqa: E501
 
         :param log: The log of this InspectionJobLogResponse.  # noqa: E501
         :type: str
