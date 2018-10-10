@@ -93,7 +93,7 @@ class InspectionJobStatusResponseStatus(object):
     def exit_code(self):
         """Gets the exit_code of this InspectionJobStatusResponseStatus.  # noqa: E501
 
-        Return code of the process perfoming inspection (user supplied  script return value).   # noqa: E501
+        Return code of the process perfoming inspection (user supplied script return value).   # noqa: E501
 
         :return: The exit_code of this InspectionJobStatusResponseStatus.  # noqa: E501
         :rtype: int
@@ -104,7 +104,7 @@ class InspectionJobStatusResponseStatus(object):
     def exit_code(self, exit_code):
         """Sets the exit_code of this InspectionJobStatusResponseStatus.
 
-        Return code of the process perfoming inspection (user supplied  script return value).   # noqa: E501
+        Return code of the process perfoming inspection (user supplied script return value).   # noqa: E501
 
         :param exit_code: The exit_code of this InspectionJobStatusResponseStatus.  # noqa: E501
         :type: int
