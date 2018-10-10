@@ -36,7 +36,7 @@ java -jar swagger-codegen/modules/swagger-codegen-cli/target/swagger-codegen-cli
     -o swagger-codegen-output/ \
     -c swagger-codegen.json
 
-rm -rf amun/swagger_client
+rm -rf amun/swagger_client Documentation
 cp -r swagger-codegen-output/amun/swagger_client/ amun/swagger_client
 # There is a bug in swagger-codegen - it does not respect sub-package for some files, this is a simple workaround.
 find swagger-codegen-output/amun.swagger_client/ -iname '*.py' -exec sed -i '/from amun.swagger_client/! s/^from amun\.\(.*\)/from amun.swagger_client.amun.\1/' {} \+
