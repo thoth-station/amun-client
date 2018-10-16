@@ -51,3 +51,11 @@ To adjust client for a desired remote, you can use the following configuration c
   
   api_response = api_instance.post_inspection(specification)
   pprint(api_response)
+
+Or you can use the prepared wrapper for this purpose:
+
+.. code-block:: python
+
+  from amun import inspect
+
+  inspect('http://amun-api.your-cluster.redhat.com/api/v1', base='fedora:28')
