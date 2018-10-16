@@ -56,3 +56,5 @@ sed -i '/.*if finished_at is None:/,+1 d' "amun/swagger_client/models/inspection
 sed -i '/.*if reason is None:/,+1 d' "amun/swagger_client/models/inspection_status_response_job.py"
 sed -i '/.*if started_at is None:/,+1 d' "amun/swagger_client/models/inspection_status_response_job.py"
 
+sed -i '/.*if log is None:/,+1 d' "amun/swagger_client/models/inspection_build_log_response.py"
+sed -i '/.*if log is None:/,+1 d' "amun/swagger_client/models/inspection_job_log_response.py"
