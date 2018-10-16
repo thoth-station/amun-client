@@ -20,3 +20,5 @@
 __name__ = 'amun'
 __version__ = '0.0.0'
 __author__ = 'Fridolin Pokorny <fridolin.pokorny@gmail.com>'
+
+from .lib import inspect
