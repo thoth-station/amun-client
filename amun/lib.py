@@ -28,7 +28,7 @@ from .swagger_client import ApiClient
 
 def inspect(host: str, base: str, *,
             files: typing.List[dict] = None, packages: typing.List[str] = None, python: dict = None,
-            script: str = None):
+            build: dict = None, run: dict = None, script: str = None):
     """Submit an analysis to the inspection endpoint."""
     # Adjust remote to communicate with:
     configuration = Configuration()
@@ -42,7 +42,9 @@ def inspect(host: str, base: str, *,
         packages=packages,
         python=python,
         files=files,
-        script=script
+        script=script,
+        build=build,
+        run=run
     )
 
     api_response = api_instance.post_inspection(specification)
