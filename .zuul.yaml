@@ -1,0 +1,15 @@
+- project:
+    check:
+      jobs:
+        - thoth-coala
+        - thoth-pytest
+    gate:
+      queue: thoth-station/amun-api
+      jobs:
+        - thoth-coala
+        - thoth-pytest
+    kebechet-auto-gate:
+      queue: thoth-station/amun-api
+      jobs:
+        - thoth-coala
+        - thoth-pytest
