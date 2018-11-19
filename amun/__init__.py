@@ -18,7 +18,7 @@
 """A CLI tool and library for interacting with Amun."""
 
 __name__ = 'amun'
-__version__ = "0.1.0"
+__version__ = "0.1.1"
 __author__ = 'Fridolin Pokorny <fridolin.pokorny@gmail.com>'
 
 from .lib import inspect
