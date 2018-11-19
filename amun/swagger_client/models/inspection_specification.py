@@ -16,8 +16,10 @@ import re  # noqa: F401
 
 import six
 
+from amun.swagger_client.models.inspection_specification_build import InspectionSpecificationBuild  # noqa: F401,E501
 from amun.swagger_client.models.inspection_specification_files import InspectionSpecificationFiles  # noqa: F401,E501
 from amun.swagger_client.models.inspection_specification_python import InspectionSpecificationPython  # noqa: F401,E501
+from amun.swagger_client.models.inspection_specification_run import InspectionSpecificationRun  # noqa: F401,E501
 
 
 class InspectionSpecification(object):
@@ -37,6 +39,8 @@ class InspectionSpecification(object):
         'base': 'str',
         'packages': 'list[str]',
         'python': 'InspectionSpecificationPython',
+        'build': 'InspectionSpecificationBuild',
+        'run': 'InspectionSpecificationRun',
         'files': 'list[InspectionSpecificationFiles]',
         'script': 'str'
     }
@@ -45,16 +49,20 @@ class InspectionSpecification(object):
         'base': 'base',
         'packages': 'packages',
         'python': 'python',
+        'build': 'build',
+        'run': 'run',
         'files': 'files',
         'script': 'script'
     }
 
-    def __init__(self, base=None, packages=None, python=None, files=None, script=None):  # noqa: E501
+    def __init__(self, base=None, packages=None, python=None, build=None, run=None, files=None, script=None):  # noqa: E501
         """InspectionSpecification - a model defined in Swagger"""  # noqa: E501
 
         self._base = None
         self._packages = None
         self._python = None
+        self._build = None
+        self._run = None
         self._files = None
         self._script = None
         self.discriminator = None
@@ -64,6 +72,10 @@ class InspectionSpecification(object):
             self.packages = packages
         if python is not None:
             self.python = python
+        if build is not None:
+            self.build = build
+        if run is not None:
+            self.run = run
         if files is not None:
             self.files = files
         if script is not None:
@@ -91,6 +103,8 @@ class InspectionSpecification(object):
         """
         if base is None:
             raise ValueError("Invalid value for `base`, must not be `None`")  # noqa: E501
+        if base is not None and len(base) < 1:
+            raise ValueError("Invalid value for `base`, length must be greater than or equal to `1`")  # noqa: E501
 
         self._base = base
 
@@ -137,6 +151,48 @@ class InspectionSpecification(object):
         """
 
         self._python = python
+
+    @property
+    def build(self):
+        """Gets the build of this InspectionSpecification.  # noqa: E501
+
+
+        :return: The build of this InspectionSpecification.  # noqa: E501
+        :rtype: InspectionSpecificationBuild
+        """
+        return self._build
+
+    @build.setter
+    def build(self, build):
+        """Sets the build of this InspectionSpecification.
+
+
+        :param build: The build of this InspectionSpecification.  # noqa: E501
+        :type: InspectionSpecificationBuild
+        """
+
+        self._build = build
+
+    @property
+    def run(self):
+        """Gets the run of this InspectionSpecification.  # noqa: E501
+
+
+        :return: The run of this InspectionSpecification.  # noqa: E501
+        :rtype: InspectionSpecificationRun
+        """
+        return self._run
+
+    @run.setter
+    def run(self, run):
+        """Sets the run of this InspectionSpecification.
+
+
+        :param run: The run of this InspectionSpecification.  # noqa: E501
+        :type: InspectionSpecificationRun
+        """
+
+        self._run = run
 
     @property
     def files(self):

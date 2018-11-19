@@ -6,6 +6,8 @@ Name | Type | Description | Notes
 **base** | **str** | Base image on which the runtime environment should be based on. | 
 **packages** | **list[str]** | A list of native packages that should be installed into the runtime environment. | [optional] 
 **python** | [**InspectionSpecificationPython**](InspectionSpecificationPython.md) |  | [optional] 
+**build** | [**InspectionSpecificationBuild**](InspectionSpecificationBuild.md) |  | [optional] 
+**run** | [**InspectionSpecificationRun**](InspectionSpecificationRun.md) |  | [optional] 
 **files** | [**list[InspectionSpecificationFiles]**](InspectionSpecificationFiles.md) | Files passed to the context. | [optional] 
 **script** | **str** | A script that should be executed in inspection run. | [optional] 
 
