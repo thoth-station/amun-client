@@ -6,6 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**get_inspection_build_log**](InspectionApi.md#get_inspection_build_log) | **GET** /inspect/{inspection_id}/build/log | Get log for a specific inspection build.
 [**get_inspection_job_log**](InspectionApi.md#get_inspection_job_log) | **GET** /inspect/{inspection_id}/job/log | Get log for a specific inspection run.
+[**get_inspection_specification**](InspectionApi.md#get_inspection_specification) | **GET** /inspect/{inspection_id}/specification | Get specification of the given inspection.
 [**get_inspection_status**](InspectionApi.md#get_inspection_status) | **GET** /inspect/{inspection_id}/status | Get status of an inspection.
 [**post_inspection**](InspectionApi.md#post_inspection) | **POST** /inspect | Inspect the given application stack.
 
@@ -90,6 +91,52 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**InspectionJobLogResponse**](InspectionJobLogResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_inspection_specification**
+> InspectionSpecificationResponse get_inspection_specification(inspection_id)
+
+Get specification of the given inspection.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import amun.swagger_client
+from amun.swagger_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = amun.swagger_client.InspectionApi()
+inspection_id = 'inspection_id_example' # str | Id of inspection run.
+
+try:
+    # Get specification of the given inspection.
+    api_response = api_instance.get_inspection_specification(inspection_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling InspectionApi->get_inspection_specification: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **inspection_id** | **str**| Id of inspection run. | 
+
+### Return type
+
+[**InspectionSpecificationResponse**](InspectionSpecificationResponse.md)
 
 ### Authorization
 
