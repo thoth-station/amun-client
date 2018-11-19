@@ -28,3 +28,6 @@
 * added Documentation/ to be ignore
 * added thoth-pytest to the pipelines
 * * added zuul and coala config * added .github for issue templates
+
+## Release 0.1.2 (2018-11-19T18:58:36)
+* Add hardware to requests
