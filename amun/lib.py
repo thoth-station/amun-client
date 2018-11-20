@@ -54,6 +54,12 @@ def is_inspection_finished(amun_api_url: str, inspection_id: str) -> bool:
     return build_finished and job_finished
 
 
+def has_inspection_job(amun_api_url: str, inspection_id: str) -> bool:
+    """Check if the given inspection has assigned job."""
+    status = get_inspection_status(amun_api_url, inspection_id)
+    return status['job'] is not None
+
+
 def inspect(amun_api_url: str, base: str, *,
             files: typing.List[dict] = None, packages: typing.List[str] = None, python: dict = None,
             build: dict = None, run: dict = None, script: str = None) -> dict:

@@ -28,3 +28,4 @@ from .lib import get_inspection_job_log
 from .lib import get_inspection_specification
 from .lib import get_inspection_status
 from .lib import is_inspection_finished
+from .lib import has_inspection_job
