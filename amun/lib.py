@@ -26,17 +26,24 @@ from .swagger_client import Configuration
 from .swagger_client import ApiClient
 
 
-def inspect(host: str, base: str, *,
-            files: typing.List[dict] = None, packages: typing.List[str] = None, python: dict = None,
-            build: dict = None, run: dict = None, script: str = None):
-    """Submit an analysis to the inspection endpoint."""
+def instantiate_inspection_api(amun_api_url: str) -> InspectionApi:
     # Adjust remote to communicate with:
     configuration = Configuration()
-    configuration.host = host
+    configuration.host = amun_api_url
     api_client = ApiClient(configuration)
 
     # Use the customized API client to talk to the remote API with the adjusted host.
     api_instance = InspectionApi(api_client)
+
+    return api_instance
+
+
+def inspect(amun_api_url: str, base: str, *,
+            files: typing.List[dict] = None, packages: typing.List[str] = None, python: dict = None,
+            build: dict = None, run: dict = None, script: str = None) -> dict:
+    """Submit an analysis to the inspection endpoint."""
+    api_instance = instantiate_inspection_api(amun_api_url)
+
     specification = InspectionSpecification(
         base=base,
         packages=packages,
@@ -49,3 +56,24 @@ def inspect(host: str, base: str, *,
 
     api_response = api_instance.post_inspection(specification)
     return api_response.to_dict()
+
+
+def get_inspection_build_log(amun_api_url: str, inspection_id: str) -> dict:
+    """Get log of an inspection build."""
+    api_instance = instantiate_inspection_api(amun_api_url)
+    response = api_instance.get_inspection_build_log(inspection_id)
+    return response.to_dict()
+
+
+def get_inspection_job_log(amun_api_url: str, inspection_id: str) -> dict:
+    """Get log of an inspection job."""
+    api_instance = instantiate_inspection_api(amun_api_url)
+    response = api_instance.get_inspection_job_log(inspection_id)
+    return response.to_dict()
+
+
+def get_inspection_specification(inspection_id: str) -> dict:
+    """Get specification of an inspection."""
+    api_instance = instantiate_inspection_api(amun_api_url)
+    response = api_instance.get_inspection_specification(inspection_id)
+    return response.to_dict()
