@@ -36,6 +36,7 @@ def instantiate_inspection_api(amun_api_url: str) -> InspectionApi:
     # Use the customized API client to talk to the remote API with the adjusted host.
     return InspectionApi(api_client)
 
+
 def get_inspection_status(amun_api_url: str, inspection_id: str) -> dict:
     """Get status dictionary of the given inspection."""
     api_instance = instantiate_inspection_api(amun_api_url)
