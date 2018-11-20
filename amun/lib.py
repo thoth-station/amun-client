@@ -27,15 +27,31 @@ from .swagger_client import ApiClient
 
 
 def instantiate_inspection_api(amun_api_url: str) -> InspectionApi:
+    """Instantiate InspectionApi for communicating with Amun API."""
     # Adjust remote to communicate with:
     configuration = Configuration()
     configuration.host = amun_api_url
     api_client = ApiClient(configuration)
 
     # Use the customized API client to talk to the remote API with the adjusted host.
-    api_instance = InspectionApi(api_client)
+    return InspectionApi(api_client)
 
-    return api_instance
+def get_inspection_status(amun_api_url: str, inspection_id: str) -> dict:
+    """Get status dictionary of the given inspection."""
+    api_instance = instantiate_inspection_api(amun_api_url)
+    api_response = api_instance.get_inspection_status(inspection_id)
+    api_response = api_response.to_dict()
+    api_response.pop('parameters', None)
+    return api_response
+
+
+def is_inspection_finished(amun_api_url: str, inspection_id: str) -> bool:
+    """Check if the given inspection is finished."""
+    status = get_inspection_status(amun_api_url, inspection_id)
+    build_finished = status['build']['state'] == 'terminated'
+    # Inspection is finished if the given job is finished or was not requested to run.
+    job_finished = status['job'] is None or status['job']['state'] == 'terminated'
+    return build_finished and job_finished
 
 
 def inspect(amun_api_url: str, base: str, *,
@@ -59,21 +75,21 @@ def inspect(amun_api_url: str, base: str, *,
 
 
 def get_inspection_build_log(amun_api_url: str, inspection_id: str) -> dict:
-    """Get log of an inspection build."""
+    """Get log of an inspection build, the inspection has to be successful."""
     api_instance = instantiate_inspection_api(amun_api_url)
-    response = api_instance.get_inspection_build_log(inspection_id)
-    return response.to_dict()
+    api_response = api_instance.get_inspection_build_log(inspection_id)
+    return api_response.to_dict()['log']
 
 
 def get_inspection_job_log(amun_api_url: str, inspection_id: str) -> dict:
-    """Get log of an inspection job."""
+    """Get log of an inspection job, the inspection has to be successful."""
     api_instance = instantiate_inspection_api(amun_api_url)
-    response = api_instance.get_inspection_job_log(inspection_id)
-    return response.to_dict()
+    api_response = api_instance.get_inspection_job_log(inspection_id)
+    return api_response.to_dict()['log']
 
 
 def get_inspection_specification(inspection_id: str) -> dict:
-    """Get specification of an inspection."""
+    """Get specification of an inspection, the inspetion has to be successful."""
     api_instance = instantiate_inspection_api(amun_api_url)
-    response = api_instance.get_inspection_specification(inspection_id)
-    return response.to_dict()
+    api_response = api_instance.get_inspection_specification(inspection_id)
+    return api_response.to_dict()['specification']
