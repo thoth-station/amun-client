@@ -8,6 +8,9 @@
       jobs:
         - thoth-coala
         - thoth-pytest
+    release:
+      jobs:
+        - upload-pypi-sesheta
     kebechet-auto-gate:
       queue: thoth-station/amun-api
       jobs:
