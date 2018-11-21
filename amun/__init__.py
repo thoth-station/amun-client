@@ -22,3 +22,10 @@ __version__ = "0.1.3"
 __author__ = 'Fridolin Pokorny <fridolin.pokorny@gmail.com>'
 
 from .lib import inspect
+from .lib import instantiate_inspection_api
+from .lib import get_inspection_build_log
+from .lib import get_inspection_job_log
+from .lib import get_inspection_specification
+from .lib import get_inspection_status
+from .lib import is_inspection_finished
+from .lib import has_inspection_job
