@@ -81,7 +81,7 @@ def inspect(amun_api_url: str, base: str, *,
     return api_response.to_dict()
 
 
-def get_inspection_build_log(amun_api_url: str, inspection_id: str) -> dict:
+def get_inspection_build_log(amun_api_url: str, inspection_id: str) -> str:
     """Get log of an inspection build, the inspection has to be successful."""
     api_instance = instantiate_inspection_api(amun_api_url)
     api_response = api_instance.get_inspection_build_log(inspection_id)
