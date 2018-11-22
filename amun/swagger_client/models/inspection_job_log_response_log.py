@@ -35,7 +35,7 @@ class InspectionJobLogResponseLog(object):
         'hwinfo': 'object',
         'script_sha256': 'str',
         'stderr': 'str',
-        'stdout': 'str'
+        'stdout': 'object'
     }
 
     attribute_map = {
@@ -169,7 +169,7 @@ class InspectionJobLogResponseLog(object):
         Standard output prodiced by user provided script.  # noqa: E501
 
         :return: The stdout of this InspectionJobLogResponseLog.  # noqa: E501
-        :rtype: str
+        :rtype: object
         """
         return self._stdout
 
@@ -180,7 +180,7 @@ class InspectionJobLogResponseLog(object):
         Standard output prodiced by user provided script.  # noqa: E501
 
         :param stdout: The stdout of this InspectionJobLogResponseLog.  # noqa: E501
-        :type: str
+        :type: object
         """
         if stdout is None:
             raise ValueError("Invalid value for `stdout`, must not be `None`")  # noqa: E501
