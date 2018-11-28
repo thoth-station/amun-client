@@ -31,3 +31,12 @@
 
 ## Release 0.1.2 (2018-11-19T18:58:36)
 * Add hardware to requests
+
+## Release 0.2.0 (2018-11-22T09:48:08)
+* Regenerate swagger client for recent changes
+* Fix missing parameter
+* Fix CI
+* Add method for checking if the given inspection has a job
+* Aggregate statuses from API
+* added a release pipeline that pushes to pypi
+* Extend library with additional routines
