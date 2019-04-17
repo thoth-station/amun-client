@@ -95,8 +95,9 @@ def get_inspection_job_log(amun_api_url: str, inspection_id: str) -> dict:
     return api_response.to_dict()['log']
 
 
-def get_inspection_specification(amun_api_url: str, inspection_id: str) -> dict:
+def get_inspection_specification(amun_api_url: str, inspection_id: str) -> typing.Tuple[dict, str]:
     """Get specification of an inspection, the inspetion has to be successful."""
     api_instance = instantiate_inspection_api(amun_api_url)
     api_response = api_instance.get_inspection_specification(inspection_id)
-    return api_response.to_dict()['specification']
+    api_response = api_response.to_dict()
+    return api_response['specification'], api_response['created']
