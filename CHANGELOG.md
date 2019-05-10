@@ -40,3 +40,18 @@
 * Aggregate statuses from API
 * added a release pipeline that pushes to pypi
 * Extend library with additional routines
+
+## Release 0.2.1 (2019-05-10T02:30:11)
+* Regenerate client
+* :pushpin: Automatic update of dependency urllib3 from 1.25.1 to 1.25.2
+* :pushpin: Automatic update of dependency urllib3 from 1.25 to 1.25.1
+* :pushpin: Automatic update of dependency urllib3 from 1.24.2 to 1.25
+* :pushpin: Automatic update of dependency urllib3 from 1.24.1 to 1.24.2
+* Update swagger client, propagate creation time of an inspection run
+* Add Thoth's configuration file
+* Add Thoth's configuration file
+* Automatic update of dependency certifi from 2018.11.29 to 2019.3.9
+* Automatic update of dependency python-dateutil from 2.7.5 to 2.8.0
+* It's already 2019
+* Automatic update of dependency six from 1.11.0 to 1.12.0
+* Automatic update of dependency certifi from 2018.10.15 to 2018.11.29
