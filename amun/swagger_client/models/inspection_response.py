@@ -31,82 +31,32 @@ class InspectionResponse(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'inspection_id': 'str',
-        'parameters': 'object',
         'build_created': 'bool',
-        'job_created': 'bool'
+        'inspection_id': 'str',
+        'job_created': 'bool',
+        'parameters': 'object'
     }
 
     attribute_map = {
-        'inspection_id': 'inspection_id',
-        'parameters': 'parameters',
         'build_created': 'build_created',
-        'job_created': 'job_created'
+        'inspection_id': 'inspection_id',
+        'job_created': 'job_created',
+        'parameters': 'parameters'
     }
 
-    def __init__(self, inspection_id=None, parameters=None, build_created=None, job_created=None):  # noqa: E501
+    def __init__(self, build_created=None, inspection_id=None, job_created=None, parameters=None):  # noqa: E501
         """InspectionResponse - a model defined in Swagger"""  # noqa: E501
 
-        self._inspection_id = None
-        self._parameters = None
         self._build_created = None
+        self._inspection_id = None
         self._job_created = None
+        self._parameters = None
         self.discriminator = None
 
-        self.inspection_id = inspection_id
-        self.parameters = parameters
         self.build_created = build_created
+        self.inspection_id = inspection_id
         self.job_created = job_created
-
-    @property
-    def inspection_id(self):
-        """Gets the inspection_id of this InspectionResponse.  # noqa: E501
-
-        An id of submitted inspection for checking its status and its results.   # noqa: E501
-
-        :return: The inspection_id of this InspectionResponse.  # noqa: E501
-        :rtype: str
-        """
-        return self._inspection_id
-
-    @inspection_id.setter
-    def inspection_id(self, inspection_id):
-        """Sets the inspection_id of this InspectionResponse.
-
-        An id of submitted inspection for checking its status and its results.   # noqa: E501
-
-        :param inspection_id: The inspection_id of this InspectionResponse.  # noqa: E501
-        :type: str
-        """
-        if inspection_id is None:
-            raise ValueError("Invalid value for `inspection_id`, must not be `None`")  # noqa: E501
-
-        self._inspection_id = inspection_id
-
-    @property
-    def parameters(self):
-        """Gets the parameters of this InspectionResponse.  # noqa: E501
-
-        Parameters echoed back to user (with default parameters if omitted).   # noqa: E501
-
-        :return: The parameters of this InspectionResponse.  # noqa: E501
-        :rtype: object
-        """
-        return self._parameters
-
-    @parameters.setter
-    def parameters(self, parameters):
-        """Sets the parameters of this InspectionResponse.
-
-        Parameters echoed back to user (with default parameters if omitted).   # noqa: E501
-
-        :param parameters: The parameters of this InspectionResponse.  # noqa: E501
-        :type: object
-        """
-        if parameters is None:
-            raise ValueError("Invalid value for `parameters`, must not be `None`")  # noqa: E501
-
-        self._parameters = parameters
+        self.parameters = parameters
 
     @property
     def build_created(self):
@@ -134,6 +84,31 @@ class InspectionResponse(object):
         self._build_created = build_created
 
     @property
+    def inspection_id(self):
+        """Gets the inspection_id of this InspectionResponse.  # noqa: E501
+
+        An id of submitted inspection for checking its status and its results.   # noqa: E501
+
+        :return: The inspection_id of this InspectionResponse.  # noqa: E501
+        :rtype: str
+        """
+        return self._inspection_id
+
+    @inspection_id.setter
+    def inspection_id(self, inspection_id):
+        """Sets the inspection_id of this InspectionResponse.
+
+        An id of submitted inspection for checking its status and its results.   # noqa: E501
+
+        :param inspection_id: The inspection_id of this InspectionResponse.  # noqa: E501
+        :type: str
+        """
+        if inspection_id is None:
+            raise ValueError("Invalid value for `inspection_id`, must not be `None`")  # noqa: E501
+
+        self._inspection_id = inspection_id
+
+    @property
     def job_created(self):
         """Gets the job_created of this InspectionResponse.  # noqa: E501
 
@@ -157,6 +132,31 @@ class InspectionResponse(object):
             raise ValueError("Invalid value for `job_created`, must not be `None`")  # noqa: E501
 
         self._job_created = job_created
+
+    @property
+    def parameters(self):
+        """Gets the parameters of this InspectionResponse.  # noqa: E501
+
+        Parameters echoed back to user (with default parameters if omitted).   # noqa: E501
+
+        :return: The parameters of this InspectionResponse.  # noqa: E501
+        :rtype: object
+        """
+        return self._parameters
+
+    @parameters.setter
+    def parameters(self, parameters):
+        """Sets the parameters of this InspectionResponse.
+
+        Parameters echoed back to user (with default parameters if omitted).   # noqa: E501
+
+        :param parameters: The parameters of this InspectionResponse.  # noqa: E501
+        :type: object
+        """
+        if parameters is None:
+            raise ValueError("Invalid value for `parameters`, must not be `None`")  # noqa: E501
+
+        self._parameters = parameters
 
     def to_dict(self):
         """Returns the model properties as a dict"""
