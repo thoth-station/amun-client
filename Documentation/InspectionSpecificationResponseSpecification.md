@@ -1,4 +1,4 @@
-# InspectionSpecification
+# InspectionSpecificationResponseSpecification
 
 ## Properties
 Name | Type | Description | Notes
