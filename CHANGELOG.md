@@ -55,3 +55,6 @@
 * It's already 2019
 * Automatic update of dependency six from 1.11.0 to 1.12.0
 * Automatic update of dependency certifi from 2018.10.15 to 2018.11.29
+
+## Release 0.2.2 (2019-05-21T09:13:46)
+
