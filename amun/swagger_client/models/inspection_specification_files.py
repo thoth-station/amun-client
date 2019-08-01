@@ -31,51 +31,24 @@ class InspectionSpecificationFiles(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'content': 'str',
-        'path': 'str'
+        'path': 'str',
+        'content': 'str'
     }
 
     attribute_map = {
-        'content': 'content',
-        'path': 'path'
+        'path': 'path',
+        'content': 'content'
     }
 
-    def __init__(self, content=None, path=None):  # noqa: E501
+    def __init__(self, path=None, content=None):  # noqa: E501
         """InspectionSpecificationFiles - a model defined in Swagger"""  # noqa: E501
 
-        self._content = None
         self._path = None
+        self._content = None
         self.discriminator = None
 
-        self.content = content
         self.path = path
-
-    @property
-    def content(self):
-        """Gets the content of this InspectionSpecificationFiles.  # noqa: E501
-
-        A string holding actual content of the file.  # noqa: E501
-
-        :return: The content of this InspectionSpecificationFiles.  # noqa: E501
-        :rtype: str
-        """
-        return self._content
-
-    @content.setter
-    def content(self, content):
-        """Sets the content of this InspectionSpecificationFiles.
-
-        A string holding actual content of the file.  # noqa: E501
-
-        :param content: The content of this InspectionSpecificationFiles.  # noqa: E501
-        :type: str
-        """
-        if content is None:
-            raise ValueError("Invalid value for `content`, must not be `None`")  # noqa: E501
-        if content is not None and len(content) < 1:
-            raise ValueError("Invalid value for `content`, length must be greater than or equal to `1`")  # noqa: E501
-
-        self._content = content
+        self.content = content
 
     @property
     def path(self):
@@ -103,6 +76,33 @@ class InspectionSpecificationFiles(object):
             raise ValueError("Invalid value for `path`, length must be greater than or equal to `1`")  # noqa: E501
 
         self._path = path
+
+    @property
+    def content(self):
+        """Gets the content of this InspectionSpecificationFiles.  # noqa: E501
+
+        A string holding actual content of the file.  # noqa: E501
+
+        :return: The content of this InspectionSpecificationFiles.  # noqa: E501
+        :rtype: str
+        """
+        return self._content
+
+    @content.setter
+    def content(self, content):
+        """Sets the content of this InspectionSpecificationFiles.
+
+        A string holding actual content of the file.  # noqa: E501
+
+        :param content: The content of this InspectionSpecificationFiles.  # noqa: E501
+        :type: str
+        """
+        if content is None:
+            raise ValueError("Invalid value for `content`, must not be `None`")  # noqa: E501
+        if content is not None and len(content) < 1:
+            raise ValueError("Invalid value for `content`, length must be greater than or equal to `1`")  # noqa: E501
+
+        self._content = content
 
     def to_dict(self):
         """Returns the model properties as a dict"""

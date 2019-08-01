@@ -35,7 +35,8 @@ class InspectionJobLogResponseLog(object):
         'hwinfo': 'object',
         'script_sha256': 'str',
         'stderr': 'str',
-        'stdout': 'object'
+        'stdout': 'object',
+        'usage': 'object'
     }
 
     attribute_map = {
@@ -43,10 +44,11 @@ class InspectionJobLogResponseLog(object):
         'hwinfo': 'hwinfo',
         'script_sha256': 'script_sha256',
         'stderr': 'stderr',
-        'stdout': 'stdout'
+        'stdout': 'stdout',
+        'usage': 'usage'
     }
 
-    def __init__(self, exit_code=None, hwinfo=None, script_sha256=None, stderr=None, stdout=None):  # noqa: E501
+    def __init__(self, exit_code=None, hwinfo=None, script_sha256=None, stderr=None, stdout=None, usage=None):  # noqa: E501
         """InspectionJobLogResponseLog - a model defined in Swagger"""  # noqa: E501
 
         self._exit_code = None
@@ -54,6 +56,7 @@ class InspectionJobLogResponseLog(object):
         self._script_sha256 = None
         self._stderr = None
         self._stdout = None
+        self._usage = None
         self.discriminator = None
 
         self.exit_code = exit_code
@@ -61,6 +64,7 @@ class InspectionJobLogResponseLog(object):
         self.script_sha256 = script_sha256
         self.stderr = stderr
         self.stdout = stdout
+        self.usage = usage
 
     @property
     def exit_code(self):
@@ -186,6 +190,31 @@ class InspectionJobLogResponseLog(object):
             raise ValueError("Invalid value for `stdout`, must not be `None`")  # noqa: E501
 
         self._stdout = stdout
+
+    @property
+    def usage(self):
+        """Gets the usage of this InspectionJobLogResponseLog.  # noqa: E501
+
+        Utilization of resources such as user-space or kernel-space CPU time, context switches, shared memory size or page faults (and others).   # noqa: E501
+
+        :return: The usage of this InspectionJobLogResponseLog.  # noqa: E501
+        :rtype: object
+        """
+        return self._usage
+
+    @usage.setter
+    def usage(self, usage):
+        """Sets the usage of this InspectionJobLogResponseLog.
+
+        Utilization of resources such as user-space or kernel-space CPU time, context switches, shared memory size or page faults (and others).   # noqa: E501
+
+        :param usage: The usage of this InspectionJobLogResponseLog.  # noqa: E501
+        :type: object
+        """
+        if usage is None:
+            raise ValueError("Invalid value for `usage`, must not be `None`")  # noqa: E501
+
+        self._usage = usage
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -31,57 +31,32 @@ class InspectionResponse(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'build_created': 'bool',
         'inspection_id': 'str',
-        'job_created': 'bool',
-        'parameters': 'object'
+        'parameters': 'object',
+        'build_created': 'bool',
+        'job_created': 'bool'
     }
 
     attribute_map = {
-        'build_created': 'build_created',
         'inspection_id': 'inspection_id',
-        'job_created': 'job_created',
-        'parameters': 'parameters'
+        'parameters': 'parameters',
+        'build_created': 'build_created',
+        'job_created': 'job_created'
     }
 
-    def __init__(self, build_created=None, inspection_id=None, job_created=None, parameters=None):  # noqa: E501
+    def __init__(self, inspection_id=None, parameters=None, build_created=None, job_created=None):  # noqa: E501
         """InspectionResponse - a model defined in Swagger"""  # noqa: E501
 
-        self._build_created = None
         self._inspection_id = None
-        self._job_created = None
         self._parameters = None
+        self._build_created = None
+        self._job_created = None
         self.discriminator = None
 
-        self.build_created = build_created
         self.inspection_id = inspection_id
-        self.job_created = job_created
         self.parameters = parameters
-
-    @property
-    def build_created(self):
-        """Gets the build_created of this InspectionResponse.  # noqa: E501
-
-        True if the build was scheduled for the given.  # noqa: E501
-
-        :return: The build_created of this InspectionResponse.  # noqa: E501
-        :rtype: bool
-        """
-        return self._build_created
-
-    @build_created.setter
-    def build_created(self, build_created):
-        """Sets the build_created of this InspectionResponse.
-
-        True if the build was scheduled for the given.  # noqa: E501
-
-        :param build_created: The build_created of this InspectionResponse.  # noqa: E501
-        :type: bool
-        """
-        if build_created is None:
-            raise ValueError("Invalid value for `build_created`, must not be `None`")  # noqa: E501
-
-        self._build_created = build_created
+        self.build_created = build_created
+        self.job_created = job_created
 
     @property
     def inspection_id(self):
@@ -109,31 +84,6 @@ class InspectionResponse(object):
         self._inspection_id = inspection_id
 
     @property
-    def job_created(self):
-        """Gets the job_created of this InspectionResponse.  # noqa: E501
-
-        True if there was created a job executing script for the given inspection.   # noqa: E501
-
-        :return: The job_created of this InspectionResponse.  # noqa: E501
-        :rtype: bool
-        """
-        return self._job_created
-
-    @job_created.setter
-    def job_created(self, job_created):
-        """Sets the job_created of this InspectionResponse.
-
-        True if there was created a job executing script for the given inspection.   # noqa: E501
-
-        :param job_created: The job_created of this InspectionResponse.  # noqa: E501
-        :type: bool
-        """
-        if job_created is None:
-            raise ValueError("Invalid value for `job_created`, must not be `None`")  # noqa: E501
-
-        self._job_created = job_created
-
-    @property
     def parameters(self):
         """Gets the parameters of this InspectionResponse.  # noqa: E501
 
@@ -157,6 +107,56 @@ class InspectionResponse(object):
             raise ValueError("Invalid value for `parameters`, must not be `None`")  # noqa: E501
 
         self._parameters = parameters
+
+    @property
+    def build_created(self):
+        """Gets the build_created of this InspectionResponse.  # noqa: E501
+
+        True if the build was scheduled for the given.  # noqa: E501
+
+        :return: The build_created of this InspectionResponse.  # noqa: E501
+        :rtype: bool
+        """
+        return self._build_created
+
+    @build_created.setter
+    def build_created(self, build_created):
+        """Sets the build_created of this InspectionResponse.
+
+        True if the build was scheduled for the given.  # noqa: E501
+
+        :param build_created: The build_created of this InspectionResponse.  # noqa: E501
+        :type: bool
+        """
+        if build_created is None:
+            raise ValueError("Invalid value for `build_created`, must not be `None`")  # noqa: E501
+
+        self._build_created = build_created
+
+    @property
+    def job_created(self):
+        """Gets the job_created of this InspectionResponse.  # noqa: E501
+
+        True if there was created a job executing script for the given inspection.   # noqa: E501
+
+        :return: The job_created of this InspectionResponse.  # noqa: E501
+        :rtype: bool
+        """
+        return self._job_created
+
+    @job_created.setter
+    def job_created(self, job_created):
+        """Sets the job_created of this InspectionResponse.
+
+        True if there was created a job executing script for the given inspection.   # noqa: E501
+
+        :param job_created: The job_created of this InspectionResponse.  # noqa: E501
+        :type: bool
+        """
+        if job_created is None:
+            raise ValueError("Invalid value for `job_created`, must not be `None`")  # noqa: E501
+
+        self._job_created = job_created
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -34,28 +34,53 @@ class InspectionStatusResponse(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'parameters': 'object',
         'build': 'InspectionStatusResponseBuild',
-        'job': 'InspectionStatusResponseJob',
-        'parameters': 'object'
+        'job': 'InspectionStatusResponseJob'
     }
 
     attribute_map = {
+        'parameters': 'parameters',
         'build': 'build',
-        'job': 'job',
-        'parameters': 'parameters'
+        'job': 'job'
     }
 
-    def __init__(self, build=None, job=None, parameters=None):  # noqa: E501
+    def __init__(self, parameters=None, build=None, job=None):  # noqa: E501
         """InspectionStatusResponse - a model defined in Swagger"""  # noqa: E501
 
+        self._parameters = None
         self._build = None
         self._job = None
-        self._parameters = None
         self.discriminator = None
 
+        self.parameters = parameters
         self.build = build
         self.job = job
-        self.parameters = parameters
+
+    @property
+    def parameters(self):
+        """Gets the parameters of this InspectionStatusResponse.  # noqa: E501
+
+        Parameters echoed back to user for debugging.  # noqa: E501
+
+        :return: The parameters of this InspectionStatusResponse.  # noqa: E501
+        :rtype: object
+        """
+        return self._parameters
+
+    @parameters.setter
+    def parameters(self, parameters):
+        """Sets the parameters of this InspectionStatusResponse.
+
+        Parameters echoed back to user for debugging.  # noqa: E501
+
+        :param parameters: The parameters of this InspectionStatusResponse.  # noqa: E501
+        :type: object
+        """
+        if parameters is None:
+            raise ValueError("Invalid value for `parameters`, must not be `None`")  # noqa: E501
+
+        self._parameters = parameters
 
     @property
     def build(self):
@@ -102,31 +127,6 @@ class InspectionStatusResponse(object):
             raise ValueError("Invalid value for `job`, must not be `None`")  # noqa: E501
 
         self._job = job
-
-    @property
-    def parameters(self):
-        """Gets the parameters of this InspectionStatusResponse.  # noqa: E501
-
-        Parameters echoed back to user for debugging.  # noqa: E501
-
-        :return: The parameters of this InspectionStatusResponse.  # noqa: E501
-        :rtype: object
-        """
-        return self._parameters
-
-    @parameters.setter
-    def parameters(self, parameters):
-        """Sets the parameters of this InspectionStatusResponse.
-
-        Parameters echoed back to user for debugging.  # noqa: E501
-
-        :param parameters: The parameters of this InspectionStatusResponse.  # noqa: E501
-        :type: object
-        """
-        if parameters is None:
-            raise ValueError("Invalid value for `parameters`, must not be `None`")  # noqa: E501
-
-        self._parameters = parameters
 
     def to_dict(self):
         """Returns the model properties as a dict"""

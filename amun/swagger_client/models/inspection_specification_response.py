@@ -16,7 +16,7 @@ import re  # noqa: F401
 
 import six
 
-from amun.swagger_client.models.inspection_specification_response_specification import InspectionSpecificationResponseSpecification  # noqa: F401,E501
+from amun.swagger_client.models.inspection_specification import InspectionSpecification  # noqa: F401,E501
 
 
 class InspectionSpecificationResponse(object):
@@ -33,53 +33,28 @@ class InspectionSpecificationResponse(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'created': 'str',
         'parameters': 'object',
-        'specification': 'InspectionSpecificationResponseSpecification'
+        'specification': 'InspectionSpecification',
+        'created': 'str'
     }
 
     attribute_map = {
-        'created': 'created',
         'parameters': 'parameters',
-        'specification': 'specification'
+        'specification': 'specification',
+        'created': 'created'
     }
 
-    def __init__(self, created=None, parameters=None, specification=None):  # noqa: E501
+    def __init__(self, parameters=None, specification=None, created=None):  # noqa: E501
         """InspectionSpecificationResponse - a model defined in Swagger"""  # noqa: E501
 
-        self._created = None
         self._parameters = None
         self._specification = None
+        self._created = None
         self.discriminator = None
 
-        self.created = created
         self.parameters = parameters
         self.specification = specification
-
-    @property
-    def created(self):
-        """Gets the created of this InspectionSpecificationResponse.  # noqa: E501
-
-        Creation time of an inspection run.  # noqa: E501
-
-        :return: The created of this InspectionSpecificationResponse.  # noqa: E501
-        :rtype: str
-        """
-        return self._created
-
-    @created.setter
-    def created(self, created):
-        """Sets the created of this InspectionSpecificationResponse.
-
-        Creation time of an inspection run.  # noqa: E501
-
-        :param created: The created of this InspectionSpecificationResponse.  # noqa: E501
-        :type: str
-        """
-        if created is None:
-            raise ValueError("Invalid value for `created`, must not be `None`")  # noqa: E501
-
-        self._created = created
+        self.created = created
 
     @property
     def parameters(self):
@@ -112,7 +87,7 @@ class InspectionSpecificationResponse(object):
 
 
         :return: The specification of this InspectionSpecificationResponse.  # noqa: E501
-        :rtype: InspectionSpecificationResponseSpecification
+        :rtype: InspectionSpecification
         """
         return self._specification
 
@@ -122,12 +97,37 @@ class InspectionSpecificationResponse(object):
 
 
         :param specification: The specification of this InspectionSpecificationResponse.  # noqa: E501
-        :type: InspectionSpecificationResponseSpecification
+        :type: InspectionSpecification
         """
         if specification is None:
             raise ValueError("Invalid value for `specification`, must not be `None`")  # noqa: E501
 
         self._specification = specification
+
+    @property
+    def created(self):
+        """Gets the created of this InspectionSpecificationResponse.  # noqa: E501
+
+        Creation time of an inspection run.  # noqa: E501
+
+        :return: The created of this InspectionSpecificationResponse.  # noqa: E501
+        :rtype: str
+        """
+        return self._created
+
+    @created.setter
+    def created(self, created):
+        """Sets the created of this InspectionSpecificationResponse.
+
+        Creation time of an inspection run.  # noqa: E501
+
+        :param created: The created of this InspectionSpecificationResponse.  # noqa: E501
+        :type: str
+        """
+        if created is None:
+            raise ValueError("Invalid value for `created`, must not be `None`")  # noqa: E501
+
+        self._created = created
 
     def to_dict(self):
         """Returns the model properties as a dict"""
