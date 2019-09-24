@@ -1,6 +1,6 @@
 # amun.swagger_client.InspectionApi
 
-All URIs are relative to *https://localhost/api/v1/*
+All URIs are relative to *http://localhost/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -17,6 +17,7 @@ Method | HTTP request | Description
 Get log for a specific inspection build.
 
 ### Example
+
 ```python
 from __future__ import print_function
 import time
@@ -24,7 +25,7 @@ import amun.swagger_client
 from amun.swagger_client.rest import ApiException
 from pprint import pprint
 
-# create an instance of the API class
+# Create an instance of the API class
 api_instance = amun.swagger_client.InspectionApi()
 inspection_id = 'inspection_id_example' # str | Id of inspection build.
 
@@ -52,8 +53,15 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful response with inspection build log. |  -  |
+**400** | On invalid request. |  -  |
+**404** | The given inspection build referenced by inspection id was not found. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -63,6 +71,7 @@ No authorization required
 Get log for a specific inspection run.
 
 ### Example
+
 ```python
 from __future__ import print_function
 import time
@@ -70,7 +79,7 @@ import amun.swagger_client
 from amun.swagger_client.rest import ApiException
 from pprint import pprint
 
-# create an instance of the API class
+# Create an instance of the API class
 api_instance = amun.swagger_client.InspectionApi()
 inspection_id = 'inspection_id_example' # str | Id of inspection run.
 
@@ -98,8 +107,16 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful response with inspection run log. |  -  |
+**202** | The inspection job was not scheduled yet, check back later. |  -  |
+**400** | On invalid request. |  -  |
+**404** | The given inspection job referenced by inspection id was not found. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -109,6 +126,7 @@ No authorization required
 Get specification of the given inspection.
 
 ### Example
+
 ```python
 from __future__ import print_function
 import time
@@ -116,7 +134,7 @@ import amun.swagger_client
 from amun.swagger_client.rest import ApiException
 from pprint import pprint
 
-# create an instance of the API class
+# Create an instance of the API class
 api_instance = amun.swagger_client.InspectionApi()
 inspection_id = 'inspection_id_example' # str | Id of inspection run.
 
@@ -144,8 +162,15 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful response with inspection specification. |  -  |
+**400** | On invalid request. |  -  |
+**404** | The given inspection with provided id was not found. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -155,6 +180,7 @@ No authorization required
 Get status of an inspection.
 
 ### Example
+
 ```python
 from __future__ import print_function
 import time
@@ -162,7 +188,7 @@ import amun.swagger_client
 from amun.swagger_client.rest import ApiException
 from pprint import pprint
 
-# create an instance of the API class
+# Create an instance of the API class
 api_instance = amun.swagger_client.InspectionApi()
 inspection_id = 'inspection_id_example' # str | Id of inspection run.
 
@@ -190,17 +216,25 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful response with inspection status. |  -  |
+**400** | On invalid request. |  -  |
+**404** | The given inspection with provided id was not found. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **post_inspection**
-> InspectionResponse post_inspection(specification)
+> InspectionResponse post_inspection(request_body)
 
 Inspect the given application stack.
 
 ### Example
+
 ```python
 from __future__ import print_function
 import time
@@ -208,13 +242,13 @@ import amun.swagger_client
 from amun.swagger_client.rest import ApiException
 from pprint import pprint
 
-# create an instance of the API class
+# Create an instance of the API class
 api_instance = amun.swagger_client.InspectionApi()
-specification = amun.swagger_client.InspectionSpecification() # InspectionSpecification | Base image to be used for runtime environment.
+request_body = None # dict(str, object) | Specification of the software stack that should be created and verified.
 
 try:
     # Inspect the given application stack.
-    api_response = api_instance.post_inspection(specification)
+    api_response = api_instance.post_inspection(request_body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling InspectionApi->post_inspection: %s\n" % e)
@@ -224,7 +258,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **specification** | [**InspectionSpecification**](InspectionSpecification.md)| Base image to be used for runtime environment. | 
+ **request_body** | [**dict(str, object)**](object.md)| Specification of the software stack that should be created and verified. | 
 
 ### Return type
 
@@ -238,6 +272,12 @@ No authorization required
 
  - **Content-Type**: application/json
  - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**202** | Successful response with inspection id. |  -  |
+**400** | On invalid request. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

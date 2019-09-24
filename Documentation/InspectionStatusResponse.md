@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**parameters** | **object** | Parameters echoed back to user for debugging. | 
+**parameters** | **dict(str, object)** | Parameters echoed back to user for debugging. | 
 **build** | [**InspectionStatusResponseBuild**](InspectionStatusResponseBuild.md) |  | 
 **job** | [**InspectionStatusResponseJob**](InspectionStatusResponseJob.md) |  | 
 
