@@ -363,3 +363,20 @@
 * Generate API swagger client
 * Add files needed for generaton
 * Update .gitignore file
+
+## Release 0.3.0 (2020-01-09T23:05:53)
+* Add CODEOWNERS file
+* Remove duplicit version identifier causing issues with Kebechet
+* Add files needed to make library work
+* Regenerate client
+* Substitute swagger-codegen with openapi-codegen
+* Happy new year!
+* :pushpin: Automatic update of dependency certifi from 2019.9.11 to 2019.11.28
+* :pushpin: Automatic update of dependency urllib3 from 1.25.6 to 1.25.7
+* :pushpin: Automatic update of dependency six from 1.12.0 to 1.13.0
+* :pushpin: Automatic update of dependency python-dateutil from 2.8.0 to 2.8.1
+* :pushpin: Automatic update of dependency urllib3 from 1.25.5 to 1.25.6
+* Use codegen compatible with OpenAPI v3
+* :pushpin: Automatic update of dependency urllib3 from 1.25.4 to 1.25.5
+* :pushpin: Automatic update of dependency urllib3 from 1.25.3 to 1.25.4
+* :pushpin: Automatic update of dependency certifi from 2019.6.16 to 2019.9.11
