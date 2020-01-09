@@ -17,8 +17,13 @@ from __future__ import absolute_import
 __version__ = "0.0.1"
 
 # import apis into sdk package
+<<<<<<< Updated upstream
 from amun.swagger_client.amun.debug_api import DebugApi
 from amun.swagger_client.amun.inspection_api import InspectionApi
+=======
+from amun.debug_api import DebugApi
+from amun.inspection_api import InspectionApi
+>>>>>>> Stashed changes
 
 # import ApiClient
 from amun.swagger_client.api_client import ApiClient
