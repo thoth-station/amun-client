@@ -14,7 +14,6 @@
 
 from __future__ import absolute_import
 
-__version__ = "0.0.1"
 
 # import apis into sdk package
 from amun.swagger_client.amun.debug_api import DebugApi
