@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**parameters** | **object** | Parameters echoed back to user (with default parameters if omitted).  | 
+**parameters** | [**object**](.md) | Parameters echoed back to user (with default parameters if omitted).  | 
 **specification** | [**InspectionSpecification**](InspectionSpecification.md) |  | 
 **created** | **str** | Creation time of an inspection run. | 
 

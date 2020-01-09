@@ -2,7 +2,7 @@
 bears = LineCountBear, FilenameBear
 files = **.py, **.yaml, **.rst, **.md
 file_naming_convention = camel
-ignore = .github/**, Documentation/**, **/swagger_client/**, **/__pycache__/**, **/__pycache__, __pycache__, __pycache__/**, **/*.pyc, *.pyc
+ignore = .github/**, Documentation/**, amun/swagger_client/**, **/__pycache__/**, **/__pycache__, __pycache__, __pycache__/**, **/*.pyc, *.pyc
 max_lines_per_file = 1000
 max_line_length = 120
 
@@ -10,7 +10,7 @@ max_line_length = 120
 bears = PycodestyleBear
 pycodestyle_ignore = E501, W504, W605
 files = **.py
-ignore = **/swagger_client/**
+ignore = amun/swagger_client/**
 language = Python
 editor = vim
 ignore = setup.py

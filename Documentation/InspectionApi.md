@@ -1,6 +1,6 @@
 # amun.swagger_client.InspectionApi
 
-All URIs are relative to *https://localhost/api/v1/*
+All URIs are relative to *http://localhost/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -52,7 +52,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -98,7 +98,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -144,7 +144,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -190,13 +190,13 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **post_inspection**
-> InspectionResponse post_inspection(specification)
+> InspectionResponse post_inspection(inspection_specification)
 
 Inspect the given application stack.
 
@@ -210,11 +210,11 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = amun.swagger_client.InspectionApi()
-specification = amun.swagger_client.InspectionSpecification() # InspectionSpecification | Base image to be used for runtime environment.
+inspection_specification = amun.swagger_client.InspectionSpecification() # InspectionSpecification | Specification of the software stack that should be created and verified.
 
 try:
     # Inspect the given application stack.
-    api_response = api_instance.post_inspection(specification)
+    api_response = api_instance.post_inspection(inspection_specification)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling InspectionApi->post_inspection: %s\n" % e)
@@ -224,7 +224,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **specification** | [**InspectionSpecification**](InspectionSpecification.md)| Base image to be used for runtime environment. | 
+ **inspection_specification** | [**InspectionSpecification**](InspectionSpecification.md)| Specification of the software stack that should be created and verified. | 
 
 ### Return type
 
