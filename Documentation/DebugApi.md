@@ -1,6 +1,6 @@
 # amun.swagger_client.DebugApi
 
-All URIs are relative to *https://localhost/api/v1/*
+All URIs are relative to *http://localhost/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **post_generate_dockerfile**
-> InspectionGenerateDockerfileResponse post_generate_dockerfile(specification)
+> InspectionGenerateDockerfileResponse post_generate_dockerfile(inspection_specification)
 
 Generate Dockerfile as it would be generated internally for inspections. 
 
@@ -22,11 +22,11 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = amun.swagger_client.DebugApi()
-specification = amun.swagger_client.InspectionSpecification() # InspectionSpecification | Specification of the software stack that should be created and verified.
+inspection_specification = amun.swagger_client.InspectionSpecification() # InspectionSpecification | Specification of the software stack that should be created and verified.
 
 try:
     # Generate Dockerfile as it would be generated internally for inspections. 
-    api_response = api_instance.post_generate_dockerfile(specification)
+    api_response = api_instance.post_generate_dockerfile(inspection_specification)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling DebugApi->post_generate_dockerfile: %s\n" % e)
@@ -36,7 +36,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **specification** | [**InspectionSpecification**](InspectionSpecification.md)| Specification of the software stack that should be created and verified. | 
+ **inspection_specification** | [**InspectionSpecification**](InspectionSpecification.md)| Specification of the software stack that should be created and verified. | 
 
 ### Return type
 
