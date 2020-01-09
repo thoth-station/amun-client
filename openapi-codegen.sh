@@ -35,5 +35,10 @@ java -jar openapi-generator-cli.jar generate \
 
 rm -rf amun/swagger_client Documentation
 find swagger-codegen-output/amun/swagger_client/ -iname '*.py' -exec sed -i '/from amun.swagger_client/! s/^from amun\.\(.*\)/from amun.swagger_client.amun.\1/' {} \+
+find swagger-codegen-output/amun.swagger_client -iname '*.py' -exec sed -i 's/from amun.debug_api import DebugApi/from amun.swagger_client.amun.debug_api import DebugApi/' {} \+
+find swagger-codegen-output/amun/swagger_client -iname '*.py' -exec sed -i 's/from amun.debug_api import DebugApi/from amun.swagger_client.amun.debug_api import DebugApi/' {} \+
+find swagger-codegen-output/amun.swagger_client -iname '*.py' -exec sed -i 's/from amun.inspection_api import InspectionApi/from amun.swagger_client.amun.inspection_api import InspectionApi/' {} \+
+find swagger-codegen-output/amun/swagger_client -iname '*.py' -exec sed -i 's/from amun.inspection_api import InspectionApi/from amun.swagger_client.amun.inspection_api import InspectionApi/' {} \+
 cp -r swagger-codegen-output/amun/swagger_client/ amun/swagger_client
 cp -r swagger-codegen-output/docs Documentation
+cp -r swagger-codegen-output/amun.swagger_client/* amun/swagger_client
