@@ -42,3 +42,4 @@ find swagger-codegen-output/amun/swagger_client -iname '*.py' -exec sed -i 's/fr
 cp -r swagger-codegen-output/amun/swagger_client/ amun/swagger_client
 cp -r swagger-codegen-output/docs Documentation
 cp -r swagger-codegen-output/amun.swagger_client/* amun/swagger_client
+sed -i '/__version__ = "0.0.1"/d' 'amun/swagger_client/__init__.py'
