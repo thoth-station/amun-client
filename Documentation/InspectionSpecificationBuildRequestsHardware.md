@@ -1,5 +1,6 @@
 # InspectionSpecificationBuildRequestsHardware
 
+Set hardware requirements for build time.
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

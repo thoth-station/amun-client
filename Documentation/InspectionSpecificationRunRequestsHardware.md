@@ -1,5 +1,6 @@
 # InspectionSpecificationRunRequestsHardware
 
+Set hardware requirements for run time.
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

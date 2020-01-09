@@ -1,5 +1,6 @@
 # InspectionSpecificationBuild
 
+Hardware requirements for build time.
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

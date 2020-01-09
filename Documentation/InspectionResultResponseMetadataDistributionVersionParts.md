@@ -1,5 +1,6 @@
 # InspectionResultResponseMetadataDistributionVersionParts
 
+Parts of version identifier of the analysing environment. 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

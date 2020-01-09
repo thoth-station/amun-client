@@ -1,5 +1,6 @@
 # InspectionResponse
 
+Response for a submitted inspection.
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

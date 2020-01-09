@@ -1,5 +1,6 @@
 # InspectionStatusResponseBuild
 
+Status information for the inspection build.
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

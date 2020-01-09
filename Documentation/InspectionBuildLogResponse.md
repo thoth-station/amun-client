@@ -1,5 +1,6 @@
 # InspectionBuildLogResponse
 
+Build logs for the given inspection.
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

@@ -1,5 +1,6 @@
 # InspectionStatusResponseJob
 
+Status information for the inspection job.
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

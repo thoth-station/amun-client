@@ -1,5 +1,6 @@
 # InspectionSpecification
 
+Specification of software stack for inspection.
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

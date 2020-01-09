@@ -1,5 +1,6 @@
 # InspectionJobLogResponseLog
 
+Inspection job logs printed to stdout/stderr as a plain text.
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
@@ -10,6 +11,7 @@ Name | Type | Description | Notes
 **stdout** | **dict(str, object)** | Standard output prodiced by user provided script. | 
 **usage** | **dict(str, object)** | Utilization of resources such as user-space or kernel-space CPU time, context switches, shared memory size or page faults (and others).  | 
 **os_release** | **dict(str, object)** | Information about operating system as gathered from /etc/os-release | 
+**runtime_environment** | **dict(str, object)** | Runtime environment information. | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

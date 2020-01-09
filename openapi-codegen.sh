@@ -21,7 +21,7 @@ which find > /dev/null  || die "Please install find utility to continue"
 
 [[ -f 'openapi-generator-cli.jar' ]] || {
     wget -O openapi-generator-cli.jar \
-    http://central.maven.org/maven2/org/openapitools/openapi-generator-cli/4.1.2/openapi-generator-cli-4.1.2.jar
+    http://central.maven.org/maven2/org/openapitools/openapi-generator-cli/4.2.2/openapi-generator-cli-4.2.2.jar
 }
 
 
