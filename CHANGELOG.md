@@ -380,3 +380,6 @@
 * :pushpin: Automatic update of dependency urllib3 from 1.25.4 to 1.25.5
 * :pushpin: Automatic update of dependency urllib3 from 1.25.3 to 1.25.4
 * :pushpin: Automatic update of dependency certifi from 2019.6.16 to 2019.9.11
+
+## Release 0.3.1 (2020-01-13T10:58:00)
+* Fix function typing signature
