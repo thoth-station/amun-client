@@ -18,7 +18,11 @@
 """A simple wrapper around models to simplify inspection submission."""
 
 
-import typing
+from typing import Any
+from typing import Dict
+from typing import List
+from typing import Optional
+from typing import Tuple
 
 from .swagger_client import InspectionApi
 from .swagger_client import InspectionSpecification
@@ -61,9 +65,17 @@ def has_inspection_job(amun_api_url: str, inspection_id: str) -> bool:
     return status['job'] is not None
 
 
-def inspect(amun_api_url: str, base: str, *,
-            files: typing.List[dict] = None, packages: typing.List[str] = None, python: dict = None,
-            build: dict = None, run: dict = None, script: str = None) -> dict:
+def inspect(
+    amun_api_url: str,
+    base: str,
+    *,
+    files: Optional[List[Dict[str, Any]]] = None,
+    packages: Optional[List[str]] = None,
+    python: Optional[Dict[str, Any]] = None,
+    build: Optional[Dict[str, Any]] = None,
+    run: Optional[Dict[str, Any]] = None,
+    script: Optional[str] = None
+) -> Dict[str, Any]:
     """Submit an analysis to the inspection endpoint."""
     api_instance = instantiate_inspection_api(amun_api_url)
 
@@ -95,8 +107,8 @@ def get_inspection_job_log(amun_api_url: str, inspection_id: str) -> dict:
     return api_response.to_dict()['log']
 
 
-def get_inspection_specification(amun_api_url: str, inspection_id: str) -> typing.Tuple[dict, str]:
-    """Get specification of an inspection, the inspetion has to be successful."""
+def get_inspection_specification(amun_api_url: str, inspection_id: str) -> Tuple[dict, str]:
+    """Get specification of an inspection, the inspection has to be successful."""
     api_instance = instantiate_inspection_api(amun_api_url)
     api_response = api_instance.get_inspection_specification(inspection_id)
     api_response = api_response.to_dict()
