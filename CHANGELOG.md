@@ -383,3 +383,7 @@
 
 ## Release 0.3.1 (2020-01-13T10:58:00)
 * Fix function typing signature
+
+## Release 0.3.2 (2020-01-16T07:30:14)
+* Add missing identifier parameter
+* :pushpin: Automatic update of dependency six from 1.13.0 to 1.14.0
