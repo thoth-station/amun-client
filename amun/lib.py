@@ -69,6 +69,7 @@ def inspect(
     amun_api_url: str,
     base: str,
     *,
+    identifier: Optional[str] = None,
     files: Optional[List[Dict[str, Any]]] = None,
     packages: Optional[List[str]] = None,
     python: Optional[Dict[str, Any]] = None,
@@ -86,7 +87,8 @@ def inspect(
         files=files,
         script=script,
         build=build,
-        run=run
+        run=run,
+        identifier=identifier,
     )
 
     api_response = api_instance.post_inspection(specification)
