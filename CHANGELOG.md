@@ -387,3 +387,6 @@
 ## Release 0.3.2 (2020-01-16T07:30:14)
 * Add missing identifier parameter
 * :pushpin: Automatic update of dependency six from 1.13.0 to 1.14.0
+
+## Release 0.3.3 (2020-01-17T09:29:17)
+* Missing python_packages
