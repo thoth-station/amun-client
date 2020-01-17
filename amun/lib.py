@@ -72,6 +72,7 @@ def inspect(
     identifier: Optional[str] = None,
     files: Optional[List[Dict[str, Any]]] = None,
     packages: Optional[List[str]] = None,
+    python_packages: Optional[List[str]] = None,
     python: Optional[Dict[str, Any]] = None,
     build: Optional[Dict[str, Any]] = None,
     run: Optional[Dict[str, Any]] = None,
@@ -83,6 +84,7 @@ def inspect(
     specification = InspectionSpecification(
         base=base,
         packages=packages,
+        python_packages=python_packages,
         python=python,
         files=files,
         script=script,
