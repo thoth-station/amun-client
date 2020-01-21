@@ -76,7 +76,9 @@ def inspect(
     python: Optional[Dict[str, Any]] = None,
     build: Optional[Dict[str, Any]] = None,
     run: Optional[Dict[str, Any]] = None,
-    script: Optional[str] = None
+    script: Optional[str] = None,
+    update: bool = False,
+    environment: Optional[Dict[str, Any]] = None
 ) -> Dict[str, Any]:
     """Submit an analysis to the inspection endpoint."""
     api_instance = instantiate_inspection_api(amun_api_url)
@@ -91,6 +93,8 @@ def inspect(
         build=build,
         run=run,
         identifier=identifier,
+        update=update,
+        environemnt=environemnt
     )
 
     api_response = api_instance.post_inspection(specification)
