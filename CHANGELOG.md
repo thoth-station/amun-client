@@ -390,3 +390,6 @@
 
 ## Release 0.3.3 (2020-01-17T09:29:17)
 * Missing python_packages
+
+## Release 0.3.4 (2020-01-21T10:14:41)
+* Add missing parameters
