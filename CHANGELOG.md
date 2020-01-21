@@ -393,3 +393,7 @@
 
 ## Release 0.3.4 (2020-01-21T10:14:41)
 * Add missing parameters
+
+## Release 0.3.5 (2020-01-21T13:42:02)
+* Use kwargs not to adjust amun-client on each change
+* Fix typo in variable name
