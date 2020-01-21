@@ -94,7 +94,7 @@ def inspect(
         run=run,
         identifier=identifier,
         update=update,
-        environemnt=environemnt
+        environemnt=environment,
     )
 
     api_response = api_instance.post_inspection(specification)
