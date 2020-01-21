@@ -68,33 +68,14 @@ def has_inspection_job(amun_api_url: str, inspection_id: str) -> bool:
 def inspect(
     amun_api_url: str,
     base: str,
-    *,
-    identifier: Optional[str] = None,
-    files: Optional[List[Dict[str, Any]]] = None,
-    packages: Optional[List[str]] = None,
-    python_packages: Optional[List[str]] = None,
-    python: Optional[Dict[str, Any]] = None,
-    build: Optional[Dict[str, Any]] = None,
-    run: Optional[Dict[str, Any]] = None,
-    script: Optional[str] = None,
-    update: bool = False,
-    environment: Optional[Dict[str, Any]] = None
+    **inspection_kwargs: Any,
 ) -> Dict[str, Any]:
     """Submit an analysis to the inspection endpoint."""
     api_instance = instantiate_inspection_api(amun_api_url)
 
     specification = InspectionSpecification(
         base=base,
-        packages=packages,
-        python_packages=python_packages,
-        python=python,
-        files=files,
-        script=script,
-        build=build,
-        run=run,
-        identifier=identifier,
-        update=update,
-        environemnt=environemnt
+        **inspection_kwargs,
     )
 
     api_response = api_instance.post_inspection(specification)
