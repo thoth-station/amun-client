@@ -397,3 +397,7 @@
 ## Release 0.3.5 (2020-01-21T13:42:02)
 * Use kwargs not to adjust amun-client on each change
 * Fix typo in variable name
+
+## Release 0.3.6 (2020-01-27T10:31:18)
+* Fix syncing logic of inspections
+* :pushpin: Automatic update of dependency urllib3 from 1.25.7 to 1.25.8
