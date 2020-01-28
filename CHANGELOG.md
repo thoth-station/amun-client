@@ -404,3 +404,6 @@
 
 ## Release 0.3.7 (2020-01-28T11:19:11)
 * Fix inspection syncing logic
+
+## Release 0.3.8 (2020-01-28T17:18:52)
+* Finally sync Amun inspection sync
