@@ -401,3 +401,6 @@
 ## Release 0.3.6 (2020-01-27T10:31:18)
 * Fix syncing logic of inspections
 * :pushpin: Automatic update of dependency urllib3 from 1.25.7 to 1.25.8
+
+## Release 0.3.7 (2020-01-28T11:19:11)
+* Fix inspection syncing logic
