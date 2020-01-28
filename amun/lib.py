@@ -111,7 +111,7 @@ def _remove_nullable(obj: Any) -> Any:
             continue
 
         if isinstance(value, dict):
-            _remove_nullable(value)
+            result[key] = _remove_nullable(value)
             continue
 
         result[key] = value
