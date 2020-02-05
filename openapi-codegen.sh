@@ -22,7 +22,7 @@ which find > /dev/null  || die "Please install find utility to continue"
 
 [[ -f 'openapi-generator-cli.jar' ]] || {
     wget -O openapi-generator-cli.jar \
-    "http://central.maven.org/maven2/org/openapitools/openapi-generator-cli/${OPENAPI_GENERATOR_CLI_VERSION}/openapi-generator-cli-${OPENAPI_GENERATOR_CLI_VERSION}.jar"
+    "https://repo1.maven.org/maven2/org/openapitools/openapi-generator-cli/${OPENAPI_GENERATOR_CLI_VERSION}/openapi-generator-cli-${OPENAPI_GENERATOR_CLI_VERSION}.jar"
 }
 
 
@@ -35,11 +35,9 @@ java -jar openapi-generator-cli.jar generate \
 
 rm -rf amun/swagger_client Documentation
 find swagger-codegen-output/amun/swagger_client/ -iname '*.py' -exec sed -i '/from amun.swagger_client/! s/^from amun\.\(.*\)/from amun.swagger_client.amun.\1/' {} \+
-find swagger-codegen-output/amun.swagger_client -iname '*.py' -exec sed -i 's/from amun.debug_api import DebugApi/from amun.swagger_client.amun.debug_api import DebugApi/' {} \+
 find swagger-codegen-output/amun/swagger_client -iname '*.py' -exec sed -i 's/from amun.debug_api import DebugApi/from amun.swagger_client.amun.debug_api import DebugApi/' {} \+
-find swagger-codegen-output/amun.swagger_client -iname '*.py' -exec sed -i 's/from amun.inspection_api import InspectionApi/from amun.swagger_client.amun.inspection_api import InspectionApi/' {} \+
 find swagger-codegen-output/amun/swagger_client -iname '*.py' -exec sed -i 's/from amun.inspection_api import InspectionApi/from amun.swagger_client.amun.inspection_api import InspectionApi/' {} \+
 cp -r swagger-codegen-output/amun/swagger_client/ amun/swagger_client
 cp -r swagger-codegen-output/docs Documentation
-cp -r swagger-codegen-output/amun.swagger_client/* amun/swagger_client
+cp -r swagger-codegen-output/amun/swagger_client/* amun/swagger_client
 sed -i '/__version__ = "0.0.1"/d' 'amun/swagger_client/__init__.py'
