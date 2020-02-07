@@ -1,5 +1,6 @@
 # InspectionJobLogResponse
 
+Job logs for the given inspection.
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

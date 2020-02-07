@@ -1,5 +1,6 @@
 # InspectionResultResponseMetadataDistribution
 
+Information about environment in which the inspection was performed. 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

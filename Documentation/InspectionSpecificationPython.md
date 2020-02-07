@@ -1,5 +1,6 @@
 # InspectionSpecificationPython
 
+Python application stack to be installed.
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
