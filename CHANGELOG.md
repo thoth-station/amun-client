@@ -407,3 +407,7 @@
 
 ## Release 0.3.8 (2020-01-28T17:18:52)
 * Finally sync Amun inspection sync
+
+## Release 0.4.0 (2020-02-19T17:10:03)
+* Update .thoth.yaml
+* Updated OpenAPI codegen
