@@ -34,31 +34,31 @@ class InspectionJobLogsResponse(object):
     """
     openapi_types = {
         'logs': 'list[InspectionJobLogsResponseLogs]',
-        'status': 'InspectionStatus',
-        'parameters': 'object'
+        'parameters': 'object',
+        'status': 'InspectionStatus'
     }
 
     attribute_map = {
         'logs': 'logs',
-        'status': 'status',
-        'parameters': 'parameters'
+        'parameters': 'parameters',
+        'status': 'status'
     }
 
-    def __init__(self, logs=None, status=None, parameters=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, logs=None, parameters=None, status=None, local_vars_configuration=None):  # noqa: E501
         """InspectionJobLogsResponse - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._logs = None
-        self._status = None
         self._parameters = None
+        self._status = None
         self.discriminator = None
 
         self.logs = logs
+        self.parameters = parameters
         if status is not None:
             self.status = status
-        self.parameters = parameters
 
     @property
     def logs(self):
@@ -84,27 +84,6 @@ class InspectionJobLogsResponse(object):
         self._logs = logs
 
     @property
-    def status(self):
-        """Gets the status of this InspectionJobLogsResponse.  # noqa: E501
-
-
-        :return: The status of this InspectionJobLogsResponse.  # noqa: E501
-        :rtype: InspectionStatus
-        """
-        return self._status
-
-    @status.setter
-    def status(self, status):
-        """Sets the status of this InspectionJobLogsResponse.
-
-
-        :param status: The status of this InspectionJobLogsResponse.  # noqa: E501
-        :type: InspectionStatus
-        """
-
-        self._status = status
-
-    @property
     def parameters(self):
         """Gets the parameters of this InspectionJobLogsResponse.  # noqa: E501
 
@@ -128,6 +107,27 @@ class InspectionJobLogsResponse(object):
             raise ValueError("Invalid value for `parameters`, must not be `None`")  # noqa: E501
 
         self._parameters = parameters
+
+    @property
+    def status(self):
+        """Gets the status of this InspectionJobLogsResponse.  # noqa: E501
+
+
+        :return: The status of this InspectionJobLogsResponse.  # noqa: E501
+        :rtype: InspectionStatus
+        """
+        return self._status
+
+    @status.setter
+    def status(self, status):
+        """Sets the status of this InspectionJobLogsResponse.
+
+
+        :param status: The status of this InspectionJobLogsResponse.  # noqa: E501
+        :type: InspectionStatus
+        """
+
+        self._status = status
 
     def to_dict(self):
         """Returns the model properties as a dict"""

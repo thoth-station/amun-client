@@ -35,26 +35,26 @@ class InspectionJobLogsResponseLogs(object):
     openapi_types = {
         'exit_code': 'int',
         'hwinfo': 'dict(str, object)',
+        'os_release': 'dict(str, object)',
+        'runtime_environment': 'dict(str, object)',
         'script_sha256': 'str',
         'stderr': 'str',
         'stdout': 'dict(str, object)',
-        'usage': 'dict(str, object)',
-        'os_release': 'dict(str, object)',
-        'runtime_environment': 'dict(str, object)'
+        'usage': 'dict(str, object)'
     }
 
     attribute_map = {
         'exit_code': 'exit_code',
         'hwinfo': 'hwinfo',
+        'os_release': 'os_release',
+        'runtime_environment': 'runtime_environment',
         'script_sha256': 'script_sha256',
         'stderr': 'stderr',
         'stdout': 'stdout',
-        'usage': 'usage',
-        'os_release': 'os_release',
-        'runtime_environment': 'runtime_environment'
+        'usage': 'usage'
     }
 
-    def __init__(self, exit_code=None, hwinfo=None, script_sha256=None, stderr=None, stdout=None, usage=None, os_release=None, runtime_environment=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, exit_code=None, hwinfo=None, os_release=None, runtime_environment=None, script_sha256=None, stderr=None, stdout=None, usage=None, local_vars_configuration=None):  # noqa: E501
         """InspectionJobLogsResponseLogs - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -62,22 +62,22 @@ class InspectionJobLogsResponseLogs(object):
 
         self._exit_code = None
         self._hwinfo = None
+        self._os_release = None
+        self._runtime_environment = None
         self._script_sha256 = None
         self._stderr = None
         self._stdout = None
         self._usage = None
-        self._os_release = None
-        self._runtime_environment = None
         self.discriminator = None
 
         self.exit_code = exit_code
         self.hwinfo = hwinfo
+        self.os_release = os_release
+        self.runtime_environment = runtime_environment
         self.script_sha256 = script_sha256
         self.stderr = stderr
         self.stdout = stdout
         self.usage = usage
-        self.os_release = os_release
-        self.runtime_environment = runtime_environment
 
     @property
     def exit_code(self):
@@ -128,6 +128,54 @@ class InspectionJobLogsResponseLogs(object):
             raise ValueError("Invalid value for `hwinfo`, must not be `None`")  # noqa: E501
 
         self._hwinfo = hwinfo
+
+    @property
+    def os_release(self):
+        """Gets the os_release of this InspectionJobLogsResponseLogs.  # noqa: E501
+
+        Information about operating system as gathered from /etc/os-release  # noqa: E501
+
+        :return: The os_release of this InspectionJobLogsResponseLogs.  # noqa: E501
+        :rtype: dict(str, object)
+        """
+        return self._os_release
+
+    @os_release.setter
+    def os_release(self, os_release):
+        """Sets the os_release of this InspectionJobLogsResponseLogs.
+
+        Information about operating system as gathered from /etc/os-release  # noqa: E501
+
+        :param os_release: The os_release of this InspectionJobLogsResponseLogs.  # noqa: E501
+        :type: dict(str, object)
+        """
+
+        self._os_release = os_release
+
+    @property
+    def runtime_environment(self):
+        """Gets the runtime_environment of this InspectionJobLogsResponseLogs.  # noqa: E501
+
+        Runtime environment information.  # noqa: E501
+
+        :return: The runtime_environment of this InspectionJobLogsResponseLogs.  # noqa: E501
+        :rtype: dict(str, object)
+        """
+        return self._runtime_environment
+
+    @runtime_environment.setter
+    def runtime_environment(self, runtime_environment):
+        """Sets the runtime_environment of this InspectionJobLogsResponseLogs.
+
+        Runtime environment information.  # noqa: E501
+
+        :param runtime_environment: The runtime_environment of this InspectionJobLogsResponseLogs.  # noqa: E501
+        :type: dict(str, object)
+        """
+        if self.local_vars_configuration.client_side_validation and runtime_environment is None:  # noqa: E501
+            raise ValueError("Invalid value for `runtime_environment`, must not be `None`")  # noqa: E501
+
+        self._runtime_environment = runtime_environment
 
     @property
     def script_sha256(self):
@@ -228,54 +276,6 @@ class InspectionJobLogsResponseLogs(object):
             raise ValueError("Invalid value for `usage`, must not be `None`")  # noqa: E501
 
         self._usage = usage
-
-    @property
-    def os_release(self):
-        """Gets the os_release of this InspectionJobLogsResponseLogs.  # noqa: E501
-
-        Information about operating system as gathered from /etc/os-release  # noqa: E501
-
-        :return: The os_release of this InspectionJobLogsResponseLogs.  # noqa: E501
-        :rtype: dict(str, object)
-        """
-        return self._os_release
-
-    @os_release.setter
-    def os_release(self, os_release):
-        """Sets the os_release of this InspectionJobLogsResponseLogs.
-
-        Information about operating system as gathered from /etc/os-release  # noqa: E501
-
-        :param os_release: The os_release of this InspectionJobLogsResponseLogs.  # noqa: E501
-        :type: dict(str, object)
-        """
-
-        self._os_release = os_release
-
-    @property
-    def runtime_environment(self):
-        """Gets the runtime_environment of this InspectionJobLogsResponseLogs.  # noqa: E501
-
-        Runtime environment information.  # noqa: E501
-
-        :return: The runtime_environment of this InspectionJobLogsResponseLogs.  # noqa: E501
-        :rtype: dict(str, object)
-        """
-        return self._runtime_environment
-
-    @runtime_environment.setter
-    def runtime_environment(self, runtime_environment):
-        """Sets the runtime_environment of this InspectionJobLogsResponseLogs.
-
-        Runtime environment information.  # noqa: E501
-
-        :param runtime_environment: The runtime_environment of this InspectionJobLogsResponseLogs.  # noqa: E501
-        :type: dict(str, object)
-        """
-        if self.local_vars_configuration.client_side_validation and runtime_environment is None:  # noqa: E501
-            raise ValueError("Invalid value for `runtime_environment`, must not be `None`")  # noqa: E501
-
-        self._runtime_environment = runtime_environment
 
     def to_dict(self):
         """Returns the model properties as a dict"""
