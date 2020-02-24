@@ -1,9 +1,10 @@
-# InspectionResponseError
+# InspectionJobLogsResponse
 
+Job logs for the given inspection.
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**error** | **str** | Error information for user. | 
+**logs** | [**list[InspectionJobLogsResponseLogs]**](InspectionJobLogsResponseLogs.md) |  | 
 **status** | [**InspectionStatus**](InspectionStatus.md) |  | [optional] 
 **parameters** | [**object**](.md) | Parameters echoed back to user for debugging. | 
 

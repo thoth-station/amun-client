@@ -1,10 +1,11 @@
-# InspectionStatusResponseBuild
+# InspectionStatusBuild
 
+Status information for the inspection build.
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **container** | **str** | SHA of container image in which the inspection is done. | 
-**exit_code** | **int** | Return code of the process perfoming inspection (user supplied script return value).  | 
+**exit_code** | **int** | Return code of the process performing inspection (user supplied script return value).  | 
 **finished_at** | **str** | Datetime in ISO format informing about when the inspection has finished.  | 
 **reason** | **str** | Reasoning on finished inspection run. | 
 **started_at** | **str** | Datetime in ISO format informing about when the inspection has started.  | 

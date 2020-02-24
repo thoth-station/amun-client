@@ -13,6 +13,7 @@ Method | HTTP request | Description
 Generate Dockerfile as it would be generated internally for inspections. 
 
 ### Example
+
 ```python
 from __future__ import print_function
 import time
@@ -20,7 +21,7 @@ import amun.swagger_client
 from amun.swagger_client.rest import ApiException
 from pprint import pprint
 
-# create an instance of the API class
+# Create an instance of the API class
 api_instance = amun.swagger_client.DebugApi()
 inspection_specification = amun.swagger_client.InspectionSpecification() # InspectionSpecification | Specification of the software stack that should be created and verified.
 
@@ -50,6 +51,12 @@ No authorization required
 
  - **Content-Type**: application/json
  - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**202** | Successful response with inspection id. |  -  |
+**400** | On invalid request. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

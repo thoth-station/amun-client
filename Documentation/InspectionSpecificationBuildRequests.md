@@ -1,5 +1,6 @@
 # InspectionSpecificationBuildRequests
 
+Requested hardware environment at build time.
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

@@ -1,5 +1,6 @@
 # InspectionSpecificationRunRequests
 
+Requested hardware environment for run time
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

@@ -1,5 +1,6 @@
 # InspectionGenerateDockerfileResponse
 
+Response for a generated Dockerfile.
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

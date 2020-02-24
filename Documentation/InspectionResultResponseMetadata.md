@@ -1,5 +1,6 @@
 # InspectionResultResponseMetadata
 
+Metadata for inspection run.
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

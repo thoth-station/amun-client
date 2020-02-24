@@ -46,17 +46,35 @@ def get_inspection_status(amun_api_url: str, inspection_id: str) -> dict:
     api_instance = instantiate_inspection_api(amun_api_url)
     api_response = api_instance.get_inspection_status(inspection_id)
     api_response = api_response.to_dict()
-    api_response.pop('parameters', None)
-    return api_response
+
+    status: Dict[str, Any]
+    try:
+        status = api_response.pop("status")
+    except KeyError:
+        if "error" in api_response:
+            err = api_response['error']
+            raise Exception(f"Inspection status could not be retrieved: {err}")
+        else:
+            raise Exception("Inspection status could not be retrieved.")
+
+    return status
 
 
 def is_inspection_finished(amun_api_url: str, inspection_id: str) -> bool:
     """Check if the given inspection is finished."""
     status = get_inspection_status(amun_api_url, inspection_id)
     build_finished = status['build']['state'] == 'terminated'
-    # Inspection is finished if the given job is finished or was not requested to run.
-    job_finished = status['job'] is None or status['job']['state'] == 'terminated'
-    return build_finished and job_finished
+    if not build_finished:
+        return False
+
+    inspection_finished: bool
+    if status['job'] is None:
+        # Inspection job was not requested to run
+        inspection_finished = False
+    else:
+        inspection_finished = status['job']['completions'] == status["job"].get("succeeded", -1)
+
+    return inspection_finished
 
 
 def has_inspection_job(amun_api_url: str, inspection_id: str) -> bool:
@@ -89,11 +107,11 @@ def get_inspection_build_log(amun_api_url: str, inspection_id: str) -> str:
     return api_response.to_dict()['log']
 
 
-def get_inspection_job_log(amun_api_url: str, inspection_id: str) -> dict:
-    """Get log of an inspection job, the inspection has to be successful."""
+def get_inspection_job_logs(amun_api_url: str, inspection_id: str) -> List[dict]:
+    """Get logs of an inspection job, the inspection has to be successful."""
     api_instance = instantiate_inspection_api(amun_api_url)
-    api_response = api_instance.get_inspection_job_log(inspection_id)
-    return api_response.to_dict()['log']
+    api_response = api_instance.get_inspection_job_logs(inspection_id)
+    return api_response.to_dict()['logs']
 
 
 def _remove_nullable(obj: Any) -> Any:
