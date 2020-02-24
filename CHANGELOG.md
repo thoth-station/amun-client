@@ -411,3 +411,7 @@
 ## Release 0.4.0 (2020-02-19T17:10:03)
 * Update .thoth.yaml
 * Updated OpenAPI codegen
+
+## Release 0.4.1 (2020-02-24T19:19:30)
+* Add issue templates
+* Updated due to Amun API changes
