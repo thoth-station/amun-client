@@ -415,3 +415,6 @@
 ## Release 0.4.1 (2020-02-24T19:19:30)
 * Add issue templates
 * Updated due to Amun API changes
+
+## Release 0.4.2 (2020-02-24T20:58:12)
+
