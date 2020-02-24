@@ -33,55 +33,27 @@ class InspectionSpecificationFiles(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'path': 'str',
-        'content': 'str'
+        'content': 'str',
+        'path': 'str'
     }
 
     attribute_map = {
-        'path': 'path',
-        'content': 'content'
+        'content': 'content',
+        'path': 'path'
     }
 
-    def __init__(self, path=None, content=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, content=None, path=None, local_vars_configuration=None):  # noqa: E501
         """InspectionSpecificationFiles - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
-        self._path = None
         self._content = None
+        self._path = None
         self.discriminator = None
 
-        self.path = path
         self.content = content
-
-    @property
-    def path(self):
-        """Gets the path of this InspectionSpecificationFiles.  # noqa: E501
-
-        Name of the file including an absolute path (relative will be taken from root).  # noqa: E501
-
-        :return: The path of this InspectionSpecificationFiles.  # noqa: E501
-        :rtype: str
-        """
-        return self._path
-
-    @path.setter
-    def path(self, path):
-        """Sets the path of this InspectionSpecificationFiles.
-
-        Name of the file including an absolute path (relative will be taken from root).  # noqa: E501
-
-        :param path: The path of this InspectionSpecificationFiles.  # noqa: E501
-        :type: str
-        """
-        if self.local_vars_configuration.client_side_validation and path is None:  # noqa: E501
-            raise ValueError("Invalid value for `path`, must not be `None`")  # noqa: E501
-        if (self.local_vars_configuration.client_side_validation and
-                path is not None and len(path) < 1):
-            raise ValueError("Invalid value for `path`, length must be greater than or equal to `1`")  # noqa: E501
-
-        self._path = path
+        self.path = path
 
     @property
     def content(self):
@@ -110,6 +82,34 @@ class InspectionSpecificationFiles(object):
             raise ValueError("Invalid value for `content`, length must be greater than or equal to `1`")  # noqa: E501
 
         self._content = content
+
+    @property
+    def path(self):
+        """Gets the path of this InspectionSpecificationFiles.  # noqa: E501
+
+        Name of the file including an absolute path (relative will be taken from root).  # noqa: E501
+
+        :return: The path of this InspectionSpecificationFiles.  # noqa: E501
+        :rtype: str
+        """
+        return self._path
+
+    @path.setter
+    def path(self, path):
+        """Sets the path of this InspectionSpecificationFiles.
+
+        Name of the file including an absolute path (relative will be taken from root).  # noqa: E501
+
+        :param path: The path of this InspectionSpecificationFiles.  # noqa: E501
+        :type: str
+        """
+        if self.local_vars_configuration.client_side_validation and path is None:  # noqa: E501
+            raise ValueError("Invalid value for `path`, must not be `None`")  # noqa: E501
+        if (self.local_vars_configuration.client_side_validation and
+                path is not None and len(path) < 1):
+            raise ValueError("Invalid value for `path`, length must be greater than or equal to `1`")  # noqa: E501
+
+        self._path = path
 
     def to_dict(self):
         """Returns the model properties as a dict"""

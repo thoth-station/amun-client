@@ -36,7 +36,6 @@ class InspectionResponse(object):
         'inspection_id': 'str',
         'parameters': 'object',
         'workflow_id': 'str',
-        'workflow_parameters': 'InspectionWorkflowParameters',
         'workflow_target': 'str'
     }
 
@@ -44,11 +43,10 @@ class InspectionResponse(object):
         'inspection_id': 'inspection_id',
         'parameters': 'parameters',
         'workflow_id': 'workflow_id',
-        'workflow_parameters': 'workflow_parameters',
         'workflow_target': 'workflow_target'
     }
 
-    def __init__(self, inspection_id=None, parameters=None, workflow_id=None, workflow_parameters=None, workflow_target=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, inspection_id=None, parameters=None, workflow_id=None, workflow_target=None, local_vars_configuration=None):  # noqa: E501
         """InspectionResponse - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -57,7 +55,6 @@ class InspectionResponse(object):
         self._inspection_id = None
         self._parameters = None
         self._workflow_id = None
-        self._workflow_parameters = None
         self._workflow_target = None
         self.discriminator = None
 
@@ -65,8 +62,6 @@ class InspectionResponse(object):
         self.parameters = parameters
         if workflow_id is not None:
             self.workflow_id = workflow_id
-        if workflow_parameters is not None:
-            self.workflow_parameters = workflow_parameters
         if workflow_target is not None:
             self.workflow_target = workflow_target
 
@@ -144,27 +139,6 @@ class InspectionResponse(object):
         self._workflow_id = workflow_id
 
     @property
-    def workflow_parameters(self):
-        """Gets the workflow_parameters of this InspectionResponse.  # noqa: E501
-
-
-        :return: The workflow_parameters of this InspectionResponse.  # noqa: E501
-        :rtype: InspectionWorkflowParameters
-        """
-        return self._workflow_parameters
-
-    @workflow_parameters.setter
-    def workflow_parameters(self, workflow_parameters):
-        """Sets the workflow_parameters of this InspectionResponse.
-
-
-        :param workflow_parameters: The workflow_parameters of this InspectionResponse.  # noqa: E501
-        :type: InspectionWorkflowParameters
-        """
-
-        self._workflow_parameters = workflow_parameters
-
-    @property
     def workflow_target(self):
         """Gets the workflow_target of this InspectionResponse.  # noqa: E501
 
@@ -182,7 +156,7 @@ class InspectionResponse(object):
         :param workflow_target: The workflow_target of this InspectionResponse.  # noqa: E501
         :type: str
         """
-        allowed_values = ["inspection-build", "inspection-result"]  # noqa: E501
+        allowed_values = ["inspection-build", "inspection-run-result"]  # noqa: E501
         if self.local_vars_configuration.client_side_validation and workflow_target not in allowed_values:  # noqa: E501
             raise ValueError(
                 "Invalid value for `workflow_target` ({0}), must be one of {1}"  # noqa: E501

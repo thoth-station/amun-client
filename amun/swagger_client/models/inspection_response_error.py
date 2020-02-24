@@ -34,31 +34,31 @@ class InspectionResponseError(object):
     """
     openapi_types = {
         'error': 'str',
-        'status': 'InspectionStatus',
-        'parameters': 'object'
+        'parameters': 'object',
+        'status': 'InspectionStatus'
     }
 
     attribute_map = {
         'error': 'error',
-        'status': 'status',
-        'parameters': 'parameters'
+        'parameters': 'parameters',
+        'status': 'status'
     }
 
-    def __init__(self, error=None, status=None, parameters=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, error=None, parameters=None, status=None, local_vars_configuration=None):  # noqa: E501
         """InspectionResponseError - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._error = None
-        self._status = None
         self._parameters = None
+        self._status = None
         self.discriminator = None
 
         self.error = error
+        self.parameters = parameters
         if status is not None:
             self.status = status
-        self.parameters = parameters
 
     @property
     def error(self):
@@ -86,27 +86,6 @@ class InspectionResponseError(object):
         self._error = error
 
     @property
-    def status(self):
-        """Gets the status of this InspectionResponseError.  # noqa: E501
-
-
-        :return: The status of this InspectionResponseError.  # noqa: E501
-        :rtype: InspectionStatus
-        """
-        return self._status
-
-    @status.setter
-    def status(self, status):
-        """Sets the status of this InspectionResponseError.
-
-
-        :param status: The status of this InspectionResponseError.  # noqa: E501
-        :type: InspectionStatus
-        """
-
-        self._status = status
-
-    @property
     def parameters(self):
         """Gets the parameters of this InspectionResponseError.  # noqa: E501
 
@@ -130,6 +109,27 @@ class InspectionResponseError(object):
             raise ValueError("Invalid value for `parameters`, must not be `None`")  # noqa: E501
 
         self._parameters = parameters
+
+    @property
+    def status(self):
+        """Gets the status of this InspectionResponseError.  # noqa: E501
+
+
+        :return: The status of this InspectionResponseError.  # noqa: E501
+        :rtype: InspectionStatus
+        """
+        return self._status
+
+    @status.setter
+    def status(self, status):
+        """Sets the status of this InspectionResponseError.
+
+
+        :param status: The status of this InspectionResponseError.  # noqa: E501
+        :type: InspectionStatus
+        """
+
+        self._status = status
 
     def to_dict(self):
         """Returns the model properties as a dict"""

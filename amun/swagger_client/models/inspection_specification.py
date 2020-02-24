@@ -33,88 +33,109 @@ class InspectionSpecification(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'allowed_failures': 'int',
         'base': 'str',
-        'identifier': 'str',
-        'allowed_failures': 'str',
-        'batch_size': 'str',
-        'packages': 'list[str]',
-        'python_packages': 'list[str]',
-        'python': 'InspectionSpecificationPython',
+        'batch_size': 'int',
         'build': 'InspectionSpecificationBuild',
-        'run': 'InspectionSpecificationRun',
-        'files': 'list[InspectionSpecificationFiles]',
         'environment': 'list[InspectionSpecificationEnvironment]',
-        'parallelism': 'str',
+        'files': 'list[InspectionSpecificationFiles]',
+        'identifier': 'str',
+        'packages': 'list[str]',
+        'parallelism': 'int',
+        'python': 'InspectionSpecificationPython',
+        'python_packages': 'list[str]',
+        'run': 'InspectionSpecificationRun',
         'script': 'str',
         'update': 'bool'
     }
 
     attribute_map = {
-        'base': 'base',
-        'identifier': 'identifier',
         'allowed_failures': 'allowed_failures',
+        'base': 'base',
         'batch_size': 'batch_size',
-        'packages': 'packages',
-        'python_packages': 'python_packages',
-        'python': 'python',
         'build': 'build',
-        'run': 'run',
-        'files': 'files',
         'environment': 'environment',
+        'files': 'files',
+        'identifier': 'identifier',
+        'packages': 'packages',
         'parallelism': 'parallelism',
+        'python': 'python',
+        'python_packages': 'python_packages',
+        'run': 'run',
         'script': 'script',
         'update': 'update'
     }
 
-    def __init__(self, base=None, identifier=None, allowed_failures='1', batch_size='1', packages=None, python_packages=None, python=None, build=None, run=None, files=None, environment=None, parallelism='1', script=None, update=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, allowed_failures=1, base=None, batch_size=1, build=None, environment=None, files=None, identifier=None, packages=None, parallelism=1, python=None, python_packages=None, run=None, script=None, update=None, local_vars_configuration=None):  # noqa: E501
         """InspectionSpecification - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
-        self._base = None
-        self._identifier = None
         self._allowed_failures = None
+        self._base = None
         self._batch_size = None
-        self._packages = None
-        self._python_packages = None
-        self._python = None
         self._build = None
-        self._run = None
-        self._files = None
         self._environment = None
+        self._files = None
+        self._identifier = None
+        self._packages = None
         self._parallelism = None
+        self._python = None
+        self._python_packages = None
+        self._run = None
         self._script = None
         self._update = None
         self.discriminator = None
 
-        self.base = base
-        if identifier is not None:
-            self.identifier = identifier
         if allowed_failures is not None:
             self.allowed_failures = allowed_failures
+        self.base = base
         if batch_size is not None:
             self.batch_size = batch_size
-        if packages is not None:
-            self.packages = packages
-        if python_packages is not None:
-            self.python_packages = python_packages
-        if python is not None:
-            self.python = python
         if build is not None:
             self.build = build
-        if run is not None:
-            self.run = run
-        if files is not None:
-            self.files = files
         if environment is not None:
             self.environment = environment
+        if files is not None:
+            self.files = files
+        if identifier is not None:
+            self.identifier = identifier
+        if packages is not None:
+            self.packages = packages
         if parallelism is not None:
             self.parallelism = parallelism
+        if python is not None:
+            self.python = python
+        if python_packages is not None:
+            self.python_packages = python_packages
+        if run is not None:
+            self.run = run
         if script is not None:
             self.script = script
         if update is not None:
             self.update = update
+
+    @property
+    def allowed_failures(self):
+        """Gets the allowed_failures of this InspectionSpecification.  # noqa: E501
+
+
+        :return: The allowed_failures of this InspectionSpecification.  # noqa: E501
+        :rtype: int
+        """
+        return self._allowed_failures
+
+    @allowed_failures.setter
+    def allowed_failures(self, allowed_failures):
+        """Sets the allowed_failures of this InspectionSpecification.
+
+
+        :param allowed_failures: The allowed_failures of this InspectionSpecification.  # noqa: E501
+        :type: int
+        """
+
+        self._allowed_failures = allowed_failures
 
     @property
     def base(self):
@@ -145,57 +166,13 @@ class InspectionSpecification(object):
         self._base = base
 
     @property
-    def identifier(self):
-        """Gets the identifier of this InspectionSpecification.  # noqa: E501
-
-        A user-created string which will be inserted into the inspection id to distinguish different inspection runs.  # noqa: E501
-
-        :return: The identifier of this InspectionSpecification.  # noqa: E501
-        :rtype: str
-        """
-        return self._identifier
-
-    @identifier.setter
-    def identifier(self, identifier):
-        """Sets the identifier of this InspectionSpecification.
-
-        A user-created string which will be inserted into the inspection id to distinguish different inspection runs.  # noqa: E501
-
-        :param identifier: The identifier of this InspectionSpecification.  # noqa: E501
-        :type: str
-        """
-
-        self._identifier = identifier
-
-    @property
-    def allowed_failures(self):
-        """Gets the allowed_failures of this InspectionSpecification.  # noqa: E501
-
-
-        :return: The allowed_failures of this InspectionSpecification.  # noqa: E501
-        :rtype: str
-        """
-        return self._allowed_failures
-
-    @allowed_failures.setter
-    def allowed_failures(self, allowed_failures):
-        """Sets the allowed_failures of this InspectionSpecification.
-
-
-        :param allowed_failures: The allowed_failures of this InspectionSpecification.  # noqa: E501
-        :type: str
-        """
-
-        self._allowed_failures = allowed_failures
-
-    @property
     def batch_size(self):
         """Gets the batch_size of this InspectionSpecification.  # noqa: E501
 
         Number of inspection runs  # noqa: E501
 
         :return: The batch_size of this InspectionSpecification.  # noqa: E501
-        :rtype: str
+        :rtype: int
         """
         return self._batch_size
 
@@ -206,77 +183,10 @@ class InspectionSpecification(object):
         Number of inspection runs  # noqa: E501
 
         :param batch_size: The batch_size of this InspectionSpecification.  # noqa: E501
-        :type: str
+        :type: int
         """
 
         self._batch_size = batch_size
-
-    @property
-    def packages(self):
-        """Gets the packages of this InspectionSpecification.  # noqa: E501
-
-        A list of native packages that should be installed into the runtime environment.  # noqa: E501
-
-        :return: The packages of this InspectionSpecification.  # noqa: E501
-        :rtype: list[str]
-        """
-        return self._packages
-
-    @packages.setter
-    def packages(self, packages):
-        """Sets the packages of this InspectionSpecification.
-
-        A list of native packages that should be installed into the runtime environment.  # noqa: E501
-
-        :param packages: The packages of this InspectionSpecification.  # noqa: E501
-        :type: list[str]
-        """
-
-        self._packages = packages
-
-    @property
-    def python_packages(self):
-        """Gets the python_packages of this InspectionSpecification.  # noqa: E501
-
-        A list of python packages that should be installed into the runtime environment.  # noqa: E501
-
-        :return: The python_packages of this InspectionSpecification.  # noqa: E501
-        :rtype: list[str]
-        """
-        return self._python_packages
-
-    @python_packages.setter
-    def python_packages(self, python_packages):
-        """Sets the python_packages of this InspectionSpecification.
-
-        A list of python packages that should be installed into the runtime environment.  # noqa: E501
-
-        :param python_packages: The python_packages of this InspectionSpecification.  # noqa: E501
-        :type: list[str]
-        """
-
-        self._python_packages = python_packages
-
-    @property
-    def python(self):
-        """Gets the python of this InspectionSpecification.  # noqa: E501
-
-
-        :return: The python of this InspectionSpecification.  # noqa: E501
-        :rtype: InspectionSpecificationPython
-        """
-        return self._python
-
-    @python.setter
-    def python(self, python):
-        """Sets the python of this InspectionSpecification.
-
-
-        :param python: The python of this InspectionSpecification.  # noqa: E501
-        :type: InspectionSpecificationPython
-        """
-
-        self._python = python
 
     @property
     def build(self):
@@ -298,50 +208,6 @@ class InspectionSpecification(object):
         """
 
         self._build = build
-
-    @property
-    def run(self):
-        """Gets the run of this InspectionSpecification.  # noqa: E501
-
-
-        :return: The run of this InspectionSpecification.  # noqa: E501
-        :rtype: InspectionSpecificationRun
-        """
-        return self._run
-
-    @run.setter
-    def run(self, run):
-        """Sets the run of this InspectionSpecification.
-
-
-        :param run: The run of this InspectionSpecification.  # noqa: E501
-        :type: InspectionSpecificationRun
-        """
-
-        self._run = run
-
-    @property
-    def files(self):
-        """Gets the files of this InspectionSpecification.  # noqa: E501
-
-        Files passed to the context.  # noqa: E501
-
-        :return: The files of this InspectionSpecification.  # noqa: E501
-        :rtype: list[InspectionSpecificationFiles]
-        """
-        return self._files
-
-    @files.setter
-    def files(self, files):
-        """Sets the files of this InspectionSpecification.
-
-        Files passed to the context.  # noqa: E501
-
-        :param files: The files of this InspectionSpecification.  # noqa: E501
-        :type: list[InspectionSpecificationFiles]
-        """
-
-        self._files = files
 
     @property
     def environment(self):
@@ -367,13 +233,82 @@ class InspectionSpecification(object):
         self._environment = environment
 
     @property
+    def files(self):
+        """Gets the files of this InspectionSpecification.  # noqa: E501
+
+        Files passed to the context.  # noqa: E501
+
+        :return: The files of this InspectionSpecification.  # noqa: E501
+        :rtype: list[InspectionSpecificationFiles]
+        """
+        return self._files
+
+    @files.setter
+    def files(self, files):
+        """Sets the files of this InspectionSpecification.
+
+        Files passed to the context.  # noqa: E501
+
+        :param files: The files of this InspectionSpecification.  # noqa: E501
+        :type: list[InspectionSpecificationFiles]
+        """
+
+        self._files = files
+
+    @property
+    def identifier(self):
+        """Gets the identifier of this InspectionSpecification.  # noqa: E501
+
+        A user-created string which will be inserted into the inspection id to distinguish different inspection runs.  # noqa: E501
+
+        :return: The identifier of this InspectionSpecification.  # noqa: E501
+        :rtype: str
+        """
+        return self._identifier
+
+    @identifier.setter
+    def identifier(self, identifier):
+        """Sets the identifier of this InspectionSpecification.
+
+        A user-created string which will be inserted into the inspection id to distinguish different inspection runs.  # noqa: E501
+
+        :param identifier: The identifier of this InspectionSpecification.  # noqa: E501
+        :type: str
+        """
+
+        self._identifier = identifier
+
+    @property
+    def packages(self):
+        """Gets the packages of this InspectionSpecification.  # noqa: E501
+
+        A list of native packages that should be installed into the runtime environment.  # noqa: E501
+
+        :return: The packages of this InspectionSpecification.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._packages
+
+    @packages.setter
+    def packages(self, packages):
+        """Sets the packages of this InspectionSpecification.
+
+        A list of native packages that should be installed into the runtime environment.  # noqa: E501
+
+        :param packages: The packages of this InspectionSpecification.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._packages = packages
+
+    @property
     def parallelism(self):
         """Gets the parallelism of this InspectionSpecification.  # noqa: E501
 
         Number of inspections that can run in parallel  # noqa: E501
 
         :return: The parallelism of this InspectionSpecification.  # noqa: E501
-        :rtype: str
+        :rtype: int
         """
         return self._parallelism
 
@@ -384,10 +319,75 @@ class InspectionSpecification(object):
         Number of inspections that can run in parallel  # noqa: E501
 
         :param parallelism: The parallelism of this InspectionSpecification.  # noqa: E501
-        :type: str
+        :type: int
         """
 
         self._parallelism = parallelism
+
+    @property
+    def python(self):
+        """Gets the python of this InspectionSpecification.  # noqa: E501
+
+
+        :return: The python of this InspectionSpecification.  # noqa: E501
+        :rtype: InspectionSpecificationPython
+        """
+        return self._python
+
+    @python.setter
+    def python(self, python):
+        """Sets the python of this InspectionSpecification.
+
+
+        :param python: The python of this InspectionSpecification.  # noqa: E501
+        :type: InspectionSpecificationPython
+        """
+
+        self._python = python
+
+    @property
+    def python_packages(self):
+        """Gets the python_packages of this InspectionSpecification.  # noqa: E501
+
+        A list of python packages that should be installed into the runtime environment.  # noqa: E501
+
+        :return: The python_packages of this InspectionSpecification.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._python_packages
+
+    @python_packages.setter
+    def python_packages(self, python_packages):
+        """Sets the python_packages of this InspectionSpecification.
+
+        A list of python packages that should be installed into the runtime environment.  # noqa: E501
+
+        :param python_packages: The python_packages of this InspectionSpecification.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._python_packages = python_packages
+
+    @property
+    def run(self):
+        """Gets the run of this InspectionSpecification.  # noqa: E501
+
+
+        :return: The run of this InspectionSpecification.  # noqa: E501
+        :rtype: InspectionSpecificationRun
+        """
+        return self._run
+
+    @run.setter
+    def run(self, run):
+        """Sets the run of this InspectionSpecification.
+
+
+        :param run: The run of this InspectionSpecification.  # noqa: E501
+        :type: InspectionSpecificationRun
+        """
+
+        self._run = run
 
     @property
     def script(self):
