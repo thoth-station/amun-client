@@ -7,7 +7,7 @@
 
 set -ex
 
-AMUN_SWAGGER_YAML=${1:-'http://amun.test.thoth-station.ninja/api/v1/openapi.json'}
+AMUN_SWAGGER_YAML=${1:-'https://amun.test.thoth-station.ninja/api/v1/openapi.json'}
 OPENAPI_GENERATOR_CLI_VERSION="4.2.2"
 
 function die() {
