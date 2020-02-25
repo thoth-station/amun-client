@@ -40,6 +40,7 @@ class InspectionSpecification(object):
         'environment': 'list[InspectionSpecificationEnvironment]',
         'files': 'list[InspectionSpecificationFiles]',
         'identifier': 'str',
+        'package_manager': 'str',
         'packages': 'list[str]',
         'parallelism': 'int',
         'python': 'InspectionSpecificationPython',
@@ -57,6 +58,7 @@ class InspectionSpecification(object):
         'environment': 'environment',
         'files': 'files',
         'identifier': 'identifier',
+        'package_manager': 'package_manager',
         'packages': 'packages',
         'parallelism': 'parallelism',
         'python': 'python',
@@ -66,7 +68,7 @@ class InspectionSpecification(object):
         'update': 'update'
     }
 
-    def __init__(self, allowed_failures=1, base=None, batch_size=1, build=None, environment=None, files=None, identifier=None, packages=None, parallelism=1, python=None, python_packages=None, run=None, script=None, update=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, allowed_failures=1, base=None, batch_size=1, build=None, environment=None, files=None, identifier=None, package_manager='micropipenv', packages=None, parallelism=1, python=None, python_packages=None, run=None, script=None, update=None, local_vars_configuration=None):  # noqa: E501
         """InspectionSpecification - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -79,6 +81,7 @@ class InspectionSpecification(object):
         self._environment = None
         self._files = None
         self._identifier = None
+        self._package_manager = None
         self._packages = None
         self._parallelism = None
         self._python = None
@@ -101,6 +104,8 @@ class InspectionSpecification(object):
             self.files = files
         if identifier is not None:
             self.identifier = identifier
+        if package_manager is not None:
+            self.package_manager = package_manager
         if packages is not None:
             self.packages = packages
         if parallelism is not None:
@@ -277,6 +282,35 @@ class InspectionSpecification(object):
         """
 
         self._identifier = identifier
+
+    @property
+    def package_manager(self):
+        """Gets the package_manager of this InspectionSpecification.  # noqa: E501
+
+        Package manager to be used for installing dependencies.  # noqa: E501
+
+        :return: The package_manager of this InspectionSpecification.  # noqa: E501
+        :rtype: str
+        """
+        return self._package_manager
+
+    @package_manager.setter
+    def package_manager(self, package_manager):
+        """Sets the package_manager of this InspectionSpecification.
+
+        Package manager to be used for installing dependencies.  # noqa: E501
+
+        :param package_manager: The package_manager of this InspectionSpecification.  # noqa: E501
+        :type: str
+        """
+        allowed_values = ["micropipenv", "pipenv"]  # noqa: E501
+        if self.local_vars_configuration.client_side_validation and package_manager not in allowed_values:  # noqa: E501
+            raise ValueError(
+                "Invalid value for `package_manager` ({0}), must be one of {1}"  # noqa: E501
+                .format(package_manager, allowed_values)
+            )
+
+        self._package_manager = package_manager
 
     @property
     def packages(self):
