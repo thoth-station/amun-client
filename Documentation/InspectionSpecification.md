@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **environment** | [**list[InspectionSpecificationEnvironment]**](InspectionSpecificationEnvironment.md) | Environment variables supplied into the build process. | [optional] 
 **files** | [**list[InspectionSpecificationFiles]**](InspectionSpecificationFiles.md) | Files passed to the context. | [optional] 
 **identifier** | **str** | A user-created string which will be inserted into the inspection id to distinguish different inspection runs. | [optional] 
+**package_manager** | **str** | Package manager to be used for installing dependencies. | [optional] [default to 'micropipenv']
 **packages** | **list[str]** | A list of native packages that should be installed into the runtime environment. | [optional] 
 **parallelism** | **int** | Number of inspections that can run in parallel | [optional] [default to 1]
 **python** | [**InspectionSpecificationPython**](InspectionSpecificationPython.md) |  | [optional] 
