@@ -418,3 +418,7 @@
 
 ## Release 0.4.2 (2020-02-24T20:58:12)
 
+
+## Release 0.4.3 (2020-02-25T12:15:51)
+* Regenerate with package manager
+* We use HTTPS
