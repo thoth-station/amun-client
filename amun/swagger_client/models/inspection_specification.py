@@ -68,7 +68,7 @@ class InspectionSpecification(object):
         'update': 'update'
     }
 
-    def __init__(self, allowed_failures=1, base=None, batch_size=1, build=None, environment=None, files=None, identifier=None, package_manager='micropipenv', packages=None, parallelism=1, python=None, python_packages=None, run=None, script=None, update=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, allowed_failures=0, base=None, batch_size=1, build=None, environment=None, files=None, identifier=None, package_manager='micropipenv', packages=None, parallelism=1, python=None, python_packages=None, run=None, script=None, update=None, local_vars_configuration=None):  # noqa: E501
         """InspectionSpecification - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
