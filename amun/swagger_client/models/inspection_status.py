@@ -34,29 +34,29 @@ class InspectionStatus(object):
     """
     openapi_types = {
         'build': 'InspectionStatusBuild',
-        'job': 'dict(str, object)',
+        'data_stored': 'bool',
         'workflow': 'dict(str, object)'
     }
 
     attribute_map = {
         'build': 'build',
-        'job': 'job',
+        'data_stored': 'data_stored',
         'workflow': 'workflow'
     }
 
-    def __init__(self, build=None, job=None, workflow=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, build=None, data_stored=None, workflow=None, local_vars_configuration=None):  # noqa: E501
         """InspectionStatus - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._build = None
-        self._job = None
+        self._data_stored = None
         self._workflow = None
         self.discriminator = None
 
         self.build = build
-        self.job = job
+        self.data_stored = data_stored
         self.workflow = workflow
 
     @property
@@ -83,29 +83,29 @@ class InspectionStatus(object):
         self._build = build
 
     @property
-    def job(self):
-        """Gets the job of this InspectionStatus.  # noqa: E501
+    def data_stored(self):
+        """Gets the data_stored of this InspectionStatus.  # noqa: E501
 
-        Status information for the inspection job.  # noqa: E501
+        A flag checking if any data were stored.  # noqa: E501
 
-        :return: The job of this InspectionStatus.  # noqa: E501
-        :rtype: dict(str, object)
+        :return: The data_stored of this InspectionStatus.  # noqa: E501
+        :rtype: bool
         """
-        return self._job
+        return self._data_stored
 
-    @job.setter
-    def job(self, job):
-        """Sets the job of this InspectionStatus.
+    @data_stored.setter
+    def data_stored(self, data_stored):
+        """Sets the data_stored of this InspectionStatus.
 
-        Status information for the inspection job.  # noqa: E501
+        A flag checking if any data were stored.  # noqa: E501
 
-        :param job: The job of this InspectionStatus.  # noqa: E501
-        :type: dict(str, object)
+        :param data_stored: The data_stored of this InspectionStatus.  # noqa: E501
+        :type: bool
         """
-        if self.local_vars_configuration.client_side_validation and job is None:  # noqa: E501
-            raise ValueError("Invalid value for `job`, must not be `None`")  # noqa: E501
+        if self.local_vars_configuration.client_side_validation and data_stored is None:  # noqa: E501
+            raise ValueError("Invalid value for `data_stored`, must not be `None`")  # noqa: E501
 
-        self._job = job
+        self._data_stored = data_stored
 
     @property
     def workflow(self):

@@ -1,6 +1,6 @@
-# InspectionJobLogsResponseLogs
+# InspectionJobResultResponseResult
 
-Inspection job logs printed to stdout/stderr as a plain text.
+Inspection job result.
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

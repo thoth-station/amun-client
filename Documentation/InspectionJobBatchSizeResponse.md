@@ -1,12 +1,11 @@
-# InspectionResultResponseMetadataDistributionVersionParts
+# InspectionJobBatchSizeResponse
 
-Parts of version identifier of the analysing environment. 
+Response with job batch size requested.
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**build_number** | **str** |  | 
-**major** | **str** |  | 
-**minor** | **str** |  | 
+**batch_size** | **int** | Batch size of the given inspection. | 
+**parameters** | [**object**](.md) | Parameters echoed back to user (with default parameters if omitted). | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
