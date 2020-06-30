@@ -4,7 +4,7 @@ Specification of software stack for inspection.
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**allowed_failures** | **int** |  | [optional] [default to 1]
+**allowed_failures** | **int** |  | [optional] [default to 0]
 **base** | **str** | Base image on which the runtime environment should be based on. | 
 **batch_size** | **int** | Number of inspection runs | [optional] [default to 1]
 **build** | [**InspectionSpecificationBuild**](InspectionSpecificationBuild.md) |  | [optional] 

@@ -54,3 +54,4 @@ from amun.swagger_client.models.inspection_specification_run_requests_hardware i
 from amun.swagger_client.models.inspection_status import InspectionStatus
 from amun.swagger_client.models.inspection_status_build import InspectionStatusBuild
 from amun.swagger_client.models.inspection_status_response import InspectionStatusResponse
+
