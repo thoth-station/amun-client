@@ -1,6 +1,6 @@
 # amun.swagger_client.DebugApi
 
-All URIs are relative to *https://amun.test.thoth-station.ninja/api/v1*
+All URIs are relative to *http://amun-api-thoth-test-core.apps.ocp.prod.psi.redhat.com/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------

@@ -4,7 +4,6 @@ Response for an inspection for the given inspection.
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**created** | **str** | Creation time of an inspection run. | 
 **parameters** | [**object**](.md) | Parameters echoed back to user (with default parameters if omitted).  | 
 **specification** | [**InspectionSpecification**](InspectionSpecification.md) |  | 
 

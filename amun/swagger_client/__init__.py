@@ -18,6 +18,7 @@ from __future__ import absolute_import
 # import apis into sdk package
 from amun.swagger_client.amun.debug_api import DebugApi
 from amun.swagger_client.amun.inspection_api import InspectionApi
+from amun.swagger_client.amun.service_api import ServiceApi
 
 # import ApiClient
 from amun.swagger_client.api_client import ApiClient
@@ -30,16 +31,13 @@ from amun.swagger_client.exceptions import ApiException
 # import models into sdk package
 from amun.swagger_client.models.inspection_build_log_response import InspectionBuildLogResponse
 from amun.swagger_client.models.inspection_generate_dockerfile_response import InspectionGenerateDockerfileResponse
+from amun.swagger_client.models.inspection_job_batch_size_response import InspectionJobBatchSizeResponse
 from amun.swagger_client.models.inspection_job_log_response import InspectionJobLogResponse
 from amun.swagger_client.models.inspection_job_log_response_log import InspectionJobLogResponseLog
-from amun.swagger_client.models.inspection_job_logs_response import InspectionJobLogsResponse
-from amun.swagger_client.models.inspection_job_logs_response_logs import InspectionJobLogsResponseLogs
+from amun.swagger_client.models.inspection_job_result_response import InspectionJobResultResponse
+from amun.swagger_client.models.inspection_job_result_response_result import InspectionJobResultResponseResult
 from amun.swagger_client.models.inspection_response import InspectionResponse
 from amun.swagger_client.models.inspection_response_error import InspectionResponseError
-from amun.swagger_client.models.inspection_result_response import InspectionResultResponse
-from amun.swagger_client.models.inspection_result_response_metadata import InspectionResultResponseMetadata
-from amun.swagger_client.models.inspection_result_response_metadata_distribution import InspectionResultResponseMetadataDistribution
-from amun.swagger_client.models.inspection_result_response_metadata_distribution_version_parts import InspectionResultResponseMetadataDistributionVersionParts
 from amun.swagger_client.models.inspection_specification import InspectionSpecification
 from amun.swagger_client.models.inspection_specification_build import InspectionSpecificationBuild
 from amun.swagger_client.models.inspection_specification_build_requests import InspectionSpecificationBuildRequests
@@ -54,4 +52,5 @@ from amun.swagger_client.models.inspection_specification_run_requests_hardware i
 from amun.swagger_client.models.inspection_status import InspectionStatus
 from amun.swagger_client.models.inspection_status_build import InspectionStatusBuild
 from amun.swagger_client.models.inspection_status_response import InspectionStatusResponse
+from amun.swagger_client.models.version_response import VersionResponse
 

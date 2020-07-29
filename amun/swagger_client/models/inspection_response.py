@@ -34,19 +34,15 @@ class InspectionResponse(object):
     """
     openapi_types = {
         'inspection_id': 'str',
-        'parameters': 'object',
-        'workflow_id': 'str',
-        'workflow_target': 'str'
+        'parameters': 'object'
     }
 
     attribute_map = {
         'inspection_id': 'inspection_id',
-        'parameters': 'parameters',
-        'workflow_id': 'workflow_id',
-        'workflow_target': 'workflow_target'
+        'parameters': 'parameters'
     }
 
-    def __init__(self, inspection_id=None, parameters=None, workflow_id=None, workflow_target=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, inspection_id=None, parameters=None, local_vars_configuration=None):  # noqa: E501
         """InspectionResponse - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -54,16 +50,10 @@ class InspectionResponse(object):
 
         self._inspection_id = None
         self._parameters = None
-        self._workflow_id = None
-        self._workflow_target = None
         self.discriminator = None
 
         self.inspection_id = inspection_id
         self.parameters = parameters
-        if workflow_id is not None:
-            self.workflow_id = workflow_id
-        if workflow_target is not None:
-            self.workflow_target = workflow_target
 
     @property
     def inspection_id(self):
@@ -114,56 +104,6 @@ class InspectionResponse(object):
             raise ValueError("Invalid value for `parameters`, must not be `None`")  # noqa: E501
 
         self._parameters = parameters
-
-    @property
-    def workflow_id(self):
-        """Gets the workflow_id of this InspectionResponse.  # noqa: E501
-
-        An id of the submitted Workflow for checking its status and its results.  # noqa: E501
-
-        :return: The workflow_id of this InspectionResponse.  # noqa: E501
-        :rtype: str
-        """
-        return self._workflow_id
-
-    @workflow_id.setter
-    def workflow_id(self, workflow_id):
-        """Sets the workflow_id of this InspectionResponse.
-
-        An id of the submitted Workflow for checking its status and its results.  # noqa: E501
-
-        :param workflow_id: The workflow_id of this InspectionResponse.  # noqa: E501
-        :type: str
-        """
-
-        self._workflow_id = workflow_id
-
-    @property
-    def workflow_target(self):
-        """Gets the workflow_target of this InspectionResponse.  # noqa: E501
-
-
-        :return: The workflow_target of this InspectionResponse.  # noqa: E501
-        :rtype: str
-        """
-        return self._workflow_target
-
-    @workflow_target.setter
-    def workflow_target(self, workflow_target):
-        """Sets the workflow_target of this InspectionResponse.
-
-
-        :param workflow_target: The workflow_target of this InspectionResponse.  # noqa: E501
-        :type: str
-        """
-        allowed_values = ["inspection-build", "inspection-run-result"]  # noqa: E501
-        if self.local_vars_configuration.client_side_validation and workflow_target not in allowed_values:  # noqa: E501
-            raise ValueError(
-                "Invalid value for `workflow_target` ({0}), must be one of {1}"  # noqa: E501
-                .format(workflow_target, allowed_values)
-            )
-
-        self._workflow_target = workflow_target
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -4,7 +4,6 @@ Specification of software stack for inspection.
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**allowed_failures** | **int** |  | [optional] [default to 0]
 **base** | **str** | Base image on which the runtime environment should be based on. | 
 **batch_size** | **int** | Number of inspection runs | [optional] [default to 1]
 **build** | [**InspectionSpecificationBuild**](InspectionSpecificationBuild.md) |  | [optional] 
@@ -13,7 +12,6 @@ Name | Type | Description | Notes
 **identifier** | **str** | A user-created string which will be inserted into the inspection id to distinguish different inspection runs. | [optional] 
 **package_manager** | **str** | Package manager to be used for installing dependencies. | [optional] [default to 'micropipenv']
 **packages** | **list[str]** | A list of native packages that should be installed into the runtime environment. | [optional] 
-**parallelism** | **int** | Number of inspections that can run in parallel | [optional] [default to 1]
 **python** | [**InspectionSpecificationPython**](InspectionSpecificationPython.md) |  | [optional] 
 **python_packages** | **list[str]** | A list of python packages that should be installed into the runtime environment. | [optional] 
 **run** | [**InspectionSpecificationRun**](InspectionSpecificationRun.md) |  | [optional] 
