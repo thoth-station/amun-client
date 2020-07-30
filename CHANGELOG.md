@@ -422,3 +422,18 @@
 ## Release 0.4.3 (2020-02-25T12:15:51)
 * Regenerate with package manager
 * We use HTTPS
+
+## Release 0.5.0 (2020-07-30T07:02:30)
+* :pushpin: Automatic update of dependency urllib3 from 1.25.9 to 1.25.10 (#139)
+* Regenerate
+* :pushpin: Automatic update of dependency certifi from 2020.4.5.2 to 2020.6.20 (#136)
+* Update codegen (#127)
+* Create OWNERS
+* fix link to amun swagger
+* :pushpin: Automatic update of dependency certifi from 2020.4.5.1 to 2020.4.5.2
+* added a 'tekton trigger tag_release pipeline issue'
+* :pushpin: Automatic update of dependency six from 1.14.0 to 1.15.0
+* :pushpin: Automatic update of dependency urllib3 from 1.25.8 to 1.25.9
+* :pushpin: Automatic update of dependency certifi from 2020.4.5 to 2020.4.5.1
+* :pushpin: Automatic update of dependency certifi from 2019.11.28 to 2020.4.5
+* Use RHEL 8
