@@ -1,12 +1,11 @@
-# InspectionResultResponseMetadataDistributionVersionParts
+# VersionResponse
 
-Parts of version identifier of the analysing environment. 
+A response with service version identifier.
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**build_number** | **str** |  | 
-**major** | **str** |  | 
-**minor** | **str** |  | 
+**service_version** | **str** | Service version identifier. | 
+**version** | **str** | Version identifier. | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

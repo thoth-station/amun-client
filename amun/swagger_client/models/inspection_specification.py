@@ -33,7 +33,6 @@ class InspectionSpecification(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'allowed_failures': 'int',
         'base': 'str',
         'batch_size': 'int',
         'build': 'InspectionSpecificationBuild',
@@ -42,7 +41,6 @@ class InspectionSpecification(object):
         'identifier': 'str',
         'package_manager': 'str',
         'packages': 'list[str]',
-        'parallelism': 'int',
         'python': 'InspectionSpecificationPython',
         'python_packages': 'list[str]',
         'run': 'InspectionSpecificationRun',
@@ -51,7 +49,6 @@ class InspectionSpecification(object):
     }
 
     attribute_map = {
-        'allowed_failures': 'allowed_failures',
         'base': 'base',
         'batch_size': 'batch_size',
         'build': 'build',
@@ -60,7 +57,6 @@ class InspectionSpecification(object):
         'identifier': 'identifier',
         'package_manager': 'package_manager',
         'packages': 'packages',
-        'parallelism': 'parallelism',
         'python': 'python',
         'python_packages': 'python_packages',
         'run': 'run',
@@ -68,13 +64,12 @@ class InspectionSpecification(object):
         'update': 'update'
     }
 
-    def __init__(self, allowed_failures=0, base=None, batch_size=1, build=None, environment=None, files=None, identifier=None, package_manager='micropipenv', packages=None, parallelism=1, python=None, python_packages=None, run=None, script=None, update=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, base=None, batch_size=1, build=None, environment=None, files=None, identifier=None, package_manager='micropipenv', packages=None, python=None, python_packages=None, run=None, script=None, update=None, local_vars_configuration=None):  # noqa: E501
         """InspectionSpecification - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
-        self._allowed_failures = None
         self._base = None
         self._batch_size = None
         self._build = None
@@ -83,7 +78,6 @@ class InspectionSpecification(object):
         self._identifier = None
         self._package_manager = None
         self._packages = None
-        self._parallelism = None
         self._python = None
         self._python_packages = None
         self._run = None
@@ -91,8 +85,6 @@ class InspectionSpecification(object):
         self._update = None
         self.discriminator = None
 
-        if allowed_failures is not None:
-            self.allowed_failures = allowed_failures
         self.base = base
         if batch_size is not None:
             self.batch_size = batch_size
@@ -108,8 +100,6 @@ class InspectionSpecification(object):
             self.package_manager = package_manager
         if packages is not None:
             self.packages = packages
-        if parallelism is not None:
-            self.parallelism = parallelism
         if python is not None:
             self.python = python
         if python_packages is not None:
@@ -120,27 +110,6 @@ class InspectionSpecification(object):
             self.script = script
         if update is not None:
             self.update = update
-
-    @property
-    def allowed_failures(self):
-        """Gets the allowed_failures of this InspectionSpecification.  # noqa: E501
-
-
-        :return: The allowed_failures of this InspectionSpecification.  # noqa: E501
-        :rtype: int
-        """
-        return self._allowed_failures
-
-    @allowed_failures.setter
-    def allowed_failures(self, allowed_failures):
-        """Sets the allowed_failures of this InspectionSpecification.
-
-
-        :param allowed_failures: The allowed_failures of this InspectionSpecification.  # noqa: E501
-        :type: int
-        """
-
-        self._allowed_failures = allowed_failures
 
     @property
     def base(self):
@@ -334,29 +303,6 @@ class InspectionSpecification(object):
         """
 
         self._packages = packages
-
-    @property
-    def parallelism(self):
-        """Gets the parallelism of this InspectionSpecification.  # noqa: E501
-
-        Number of inspections that can run in parallel  # noqa: E501
-
-        :return: The parallelism of this InspectionSpecification.  # noqa: E501
-        :rtype: int
-        """
-        return self._parallelism
-
-    @parallelism.setter
-    def parallelism(self, parallelism):
-        """Sets the parallelism of this InspectionSpecification.
-
-        Number of inspections that can run in parallel  # noqa: E501
-
-        :param parallelism: The parallelism of this InspectionSpecification.  # noqa: E501
-        :type: int
-        """
-
-        self._parallelism = parallelism
 
     @property
     def python(self):

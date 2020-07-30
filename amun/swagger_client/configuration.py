@@ -34,7 +34,7 @@ class Configuration(object):
     :param password: Password for HTTP basic authentication
     """
 
-    def __init__(self, host="https://amun.test.thoth-station.ninja/api/v1",
+    def __init__(self, host="http://amun-api-thoth-test-core.apps.ocp.prod.psi.redhat.com/api/v1",
                  api_key=None, api_key_prefix=None,
                  username="", password=""):
         """Constructor
@@ -264,7 +264,7 @@ class Configuration(object):
         """
         return [
             {
-                'url': "https://amun.test.thoth-station.ninja/api/v1",
+                'url': "http://amun-api-thoth-test-core.apps.ocp.prod.psi.redhat.com/api/v1",
                 'description': "No description provided",
             }
         ]
