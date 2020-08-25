@@ -1,9 +1,10 @@
 # amun.swagger_client.InspectionApi
 
-All URIs are relative to *http://amun-api-thoth-test-core.apps.ocp.prod.psi.redhat.com/api/v1*
+All URIs are relative to *http://localhost/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**get_inspection**](InspectionApi.md#get_inspection) | **GET** /inspect | Get listing of inspections available.
 [**get_inspection_build_log**](InspectionApi.md#get_inspection_build_log) | **GET** /inspect/{inspection_id}/build/log | Get log for a specific inspection build.
 [**get_inspection_job_batch_size**](InspectionApi.md#get_inspection_job_batch_size) | **GET** /inspect/{inspection_id}/job/batch-size | Get batch size for the given inspection.
 [**get_inspection_job_log**](InspectionApi.md#get_inspection_job_log) | **GET** /inspect/{inspection_id}/job/{item}/log | Get log for a specific inspection run.
@@ -12,6 +13,60 @@ Method | HTTP request | Description
 [**get_inspection_status**](InspectionApi.md#get_inspection_status) | **GET** /inspect/{inspection_id}/status | Get status of an inspection.
 [**post_inspection**](InspectionApi.md#post_inspection) | **POST** /inspect | Inspect the given application stack.
 
+
+# **get_inspection**
+> InspectionListingResponse get_inspection(page=page, limit=limit)
+
+Get listing of inspections available.
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import amun.swagger_client
+from amun.swagger_client.rest import ApiException
+from pprint import pprint
+
+# Create an instance of the API class
+api_instance = amun.swagger_client.InspectionApi()
+page = 56 # int | Page number for the paginated response. (optional)
+limit = 56 # int | Limit number of results in the paginated response (can be adjusted by backend). (optional)
+
+try:
+    # Get listing of inspections available.
+    api_response = api_instance.get_inspection(page=page, limit=limit)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling InspectionApi->get_inspection: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **page** | **int**| Page number for the paginated response. | [optional] 
+ **limit** | **int**| Limit number of results in the paginated response (can be adjusted by backend). | [optional] 
+
+### Return type
+
+[**InspectionListingResponse**](InspectionListingResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful response with inspection id. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_inspection_build_log**
 > InspectionBuildLogResponse get_inspection_build_log(inspection_id)

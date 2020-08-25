@@ -34,82 +34,87 @@ class InspectionSpecification(object):
     """
     openapi_types = {
         'base': 'str',
-        'batch_size': 'int',
-        'build': 'InspectionSpecificationBuild',
-        'environment': 'list[InspectionSpecificationEnvironment]',
-        'files': 'list[InspectionSpecificationFiles]',
         'identifier': 'str',
         'package_manager': 'str',
+        'batch_size': 'int',
         'packages': 'list[str]',
-        'python': 'InspectionSpecificationPython',
         'python_packages': 'list[str]',
+        'python': 'InspectionSpecificationPython',
+        'build': 'InspectionSpecificationBuild',
         'run': 'InspectionSpecificationRun',
+        'files': 'list[InspectionSpecificationFiles]',
+        'environment': 'list[InspectionSpecificationEnvironment]',
         'script': 'str',
-        'update': 'bool'
+        'update': 'bool',
+        'upgrade_pip': 'bool'
     }
 
     attribute_map = {
         'base': 'base',
-        'batch_size': 'batch_size',
-        'build': 'build',
-        'environment': 'environment',
-        'files': 'files',
         'identifier': 'identifier',
         'package_manager': 'package_manager',
+        'batch_size': 'batch_size',
         'packages': 'packages',
-        'python': 'python',
         'python_packages': 'python_packages',
+        'python': 'python',
+        'build': 'build',
         'run': 'run',
+        'files': 'files',
+        'environment': 'environment',
         'script': 'script',
-        'update': 'update'
+        'update': 'update',
+        'upgrade_pip': 'upgrade_pip'
     }
 
-    def __init__(self, base=None, batch_size=1, build=None, environment=None, files=None, identifier=None, package_manager='micropipenv', packages=None, python=None, python_packages=None, run=None, script=None, update=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, base=None, identifier=None, package_manager='micropipenv', batch_size=1, packages=None, python_packages=None, python=None, build=None, run=None, files=None, environment=None, script=None, update=None, upgrade_pip=False, local_vars_configuration=None):  # noqa: E501
         """InspectionSpecification - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._base = None
-        self._batch_size = None
-        self._build = None
-        self._environment = None
-        self._files = None
         self._identifier = None
         self._package_manager = None
+        self._batch_size = None
         self._packages = None
-        self._python = None
         self._python_packages = None
+        self._python = None
+        self._build = None
         self._run = None
+        self._files = None
+        self._environment = None
         self._script = None
         self._update = None
+        self._upgrade_pip = None
         self.discriminator = None
 
         self.base = base
-        if batch_size is not None:
-            self.batch_size = batch_size
-        if build is not None:
-            self.build = build
-        if environment is not None:
-            self.environment = environment
-        if files is not None:
-            self.files = files
         if identifier is not None:
             self.identifier = identifier
         if package_manager is not None:
             self.package_manager = package_manager
+        if batch_size is not None:
+            self.batch_size = batch_size
         if packages is not None:
             self.packages = packages
-        if python is not None:
-            self.python = python
         if python_packages is not None:
             self.python_packages = python_packages
+        if python is not None:
+            self.python = python
+        if build is not None:
+            self.build = build
         if run is not None:
             self.run = run
+        if files is not None:
+            self.files = files
+        if environment is not None:
+            self.environment = environment
         if script is not None:
             self.script = script
         if update is not None:
             self.update = update
+        if upgrade_pip is not None:
+            self.upgrade_pip = upgrade_pip
 
     @property
     def base(self):
@@ -138,96 +143,6 @@ class InspectionSpecification(object):
             raise ValueError("Invalid value for `base`, length must be greater than or equal to `1`")  # noqa: E501
 
         self._base = base
-
-    @property
-    def batch_size(self):
-        """Gets the batch_size of this InspectionSpecification.  # noqa: E501
-
-        Number of inspection runs  # noqa: E501
-
-        :return: The batch_size of this InspectionSpecification.  # noqa: E501
-        :rtype: int
-        """
-        return self._batch_size
-
-    @batch_size.setter
-    def batch_size(self, batch_size):
-        """Sets the batch_size of this InspectionSpecification.
-
-        Number of inspection runs  # noqa: E501
-
-        :param batch_size: The batch_size of this InspectionSpecification.  # noqa: E501
-        :type: int
-        """
-
-        self._batch_size = batch_size
-
-    @property
-    def build(self):
-        """Gets the build of this InspectionSpecification.  # noqa: E501
-
-
-        :return: The build of this InspectionSpecification.  # noqa: E501
-        :rtype: InspectionSpecificationBuild
-        """
-        return self._build
-
-    @build.setter
-    def build(self, build):
-        """Sets the build of this InspectionSpecification.
-
-
-        :param build: The build of this InspectionSpecification.  # noqa: E501
-        :type: InspectionSpecificationBuild
-        """
-
-        self._build = build
-
-    @property
-    def environment(self):
-        """Gets the environment of this InspectionSpecification.  # noqa: E501
-
-        Environment variables supplied into the build process.  # noqa: E501
-
-        :return: The environment of this InspectionSpecification.  # noqa: E501
-        :rtype: list[InspectionSpecificationEnvironment]
-        """
-        return self._environment
-
-    @environment.setter
-    def environment(self, environment):
-        """Sets the environment of this InspectionSpecification.
-
-        Environment variables supplied into the build process.  # noqa: E501
-
-        :param environment: The environment of this InspectionSpecification.  # noqa: E501
-        :type: list[InspectionSpecificationEnvironment]
-        """
-
-        self._environment = environment
-
-    @property
-    def files(self):
-        """Gets the files of this InspectionSpecification.  # noqa: E501
-
-        Files passed to the context.  # noqa: E501
-
-        :return: The files of this InspectionSpecification.  # noqa: E501
-        :rtype: list[InspectionSpecificationFiles]
-        """
-        return self._files
-
-    @files.setter
-    def files(self, files):
-        """Sets the files of this InspectionSpecification.
-
-        Files passed to the context.  # noqa: E501
-
-        :param files: The files of this InspectionSpecification.  # noqa: E501
-        :type: list[InspectionSpecificationFiles]
-        """
-
-        self._files = files
 
     @property
     def identifier(self):
@@ -282,6 +197,29 @@ class InspectionSpecification(object):
         self._package_manager = package_manager
 
     @property
+    def batch_size(self):
+        """Gets the batch_size of this InspectionSpecification.  # noqa: E501
+
+        Number of inspection runs  # noqa: E501
+
+        :return: The batch_size of this InspectionSpecification.  # noqa: E501
+        :rtype: int
+        """
+        return self._batch_size
+
+    @batch_size.setter
+    def batch_size(self, batch_size):
+        """Sets the batch_size of this InspectionSpecification.
+
+        Number of inspection runs  # noqa: E501
+
+        :param batch_size: The batch_size of this InspectionSpecification.  # noqa: E501
+        :type: int
+        """
+
+        self._batch_size = batch_size
+
+    @property
     def packages(self):
         """Gets the packages of this InspectionSpecification.  # noqa: E501
 
@@ -303,27 +241,6 @@ class InspectionSpecification(object):
         """
 
         self._packages = packages
-
-    @property
-    def python(self):
-        """Gets the python of this InspectionSpecification.  # noqa: E501
-
-
-        :return: The python of this InspectionSpecification.  # noqa: E501
-        :rtype: InspectionSpecificationPython
-        """
-        return self._python
-
-    @python.setter
-    def python(self, python):
-        """Sets the python of this InspectionSpecification.
-
-
-        :param python: The python of this InspectionSpecification.  # noqa: E501
-        :type: InspectionSpecificationPython
-        """
-
-        self._python = python
 
     @property
     def python_packages(self):
@@ -349,6 +266,48 @@ class InspectionSpecification(object):
         self._python_packages = python_packages
 
     @property
+    def python(self):
+        """Gets the python of this InspectionSpecification.  # noqa: E501
+
+
+        :return: The python of this InspectionSpecification.  # noqa: E501
+        :rtype: InspectionSpecificationPython
+        """
+        return self._python
+
+    @python.setter
+    def python(self, python):
+        """Sets the python of this InspectionSpecification.
+
+
+        :param python: The python of this InspectionSpecification.  # noqa: E501
+        :type: InspectionSpecificationPython
+        """
+
+        self._python = python
+
+    @property
+    def build(self):
+        """Gets the build of this InspectionSpecification.  # noqa: E501
+
+
+        :return: The build of this InspectionSpecification.  # noqa: E501
+        :rtype: InspectionSpecificationBuild
+        """
+        return self._build
+
+    @build.setter
+    def build(self, build):
+        """Sets the build of this InspectionSpecification.
+
+
+        :param build: The build of this InspectionSpecification.  # noqa: E501
+        :type: InspectionSpecificationBuild
+        """
+
+        self._build = build
+
+    @property
     def run(self):
         """Gets the run of this InspectionSpecification.  # noqa: E501
 
@@ -368,6 +327,52 @@ class InspectionSpecification(object):
         """
 
         self._run = run
+
+    @property
+    def files(self):
+        """Gets the files of this InspectionSpecification.  # noqa: E501
+
+        Files passed to the context.  # noqa: E501
+
+        :return: The files of this InspectionSpecification.  # noqa: E501
+        :rtype: list[InspectionSpecificationFiles]
+        """
+        return self._files
+
+    @files.setter
+    def files(self, files):
+        """Sets the files of this InspectionSpecification.
+
+        Files passed to the context.  # noqa: E501
+
+        :param files: The files of this InspectionSpecification.  # noqa: E501
+        :type: list[InspectionSpecificationFiles]
+        """
+
+        self._files = files
+
+    @property
+    def environment(self):
+        """Gets the environment of this InspectionSpecification.  # noqa: E501
+
+        Environment variables supplied into the build process.  # noqa: E501
+
+        :return: The environment of this InspectionSpecification.  # noqa: E501
+        :rtype: list[InspectionSpecificationEnvironment]
+        """
+        return self._environment
+
+    @environment.setter
+    def environment(self, environment):
+        """Sets the environment of this InspectionSpecification.
+
+        Environment variables supplied into the build process.  # noqa: E501
+
+        :param environment: The environment of this InspectionSpecification.  # noqa: E501
+        :type: list[InspectionSpecificationEnvironment]
+        """
+
+        self._environment = environment
 
     @property
     def script(self):
@@ -414,6 +419,29 @@ class InspectionSpecification(object):
         """
 
         self._update = update
+
+    @property
+    def upgrade_pip(self):
+        """Gets the upgrade_pip of this InspectionSpecification.  # noqa: E501
+
+        Update pip before installing packages.  # noqa: E501
+
+        :return: The upgrade_pip of this InspectionSpecification.  # noqa: E501
+        :rtype: bool
+        """
+        return self._upgrade_pip
+
+    @upgrade_pip.setter
+    def upgrade_pip(self, upgrade_pip):
+        """Sets the upgrade_pip of this InspectionSpecification.
+
+        Update pip before installing packages.  # noqa: E501
+
+        :param upgrade_pip: The upgrade_pip of this InspectionSpecification.  # noqa: E501
+        :type: bool
+        """
+
+        self._upgrade_pip = upgrade_pip
 
     def to_dict(self):
         """Returns the model properties as a dict"""
