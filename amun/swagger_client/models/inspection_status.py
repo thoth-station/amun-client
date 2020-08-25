@@ -34,30 +34,30 @@ class InspectionStatus(object):
     """
     openapi_types = {
         'build': 'InspectionStatusBuild',
-        'data_stored': 'bool',
-        'workflow': 'dict(str, object)'
+        'workflow': 'dict(str, object)',
+        'data_stored': 'bool'
     }
 
     attribute_map = {
         'build': 'build',
-        'data_stored': 'data_stored',
-        'workflow': 'workflow'
+        'workflow': 'workflow',
+        'data_stored': 'data_stored'
     }
 
-    def __init__(self, build=None, data_stored=None, workflow=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, build=None, workflow=None, data_stored=None, local_vars_configuration=None):  # noqa: E501
         """InspectionStatus - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._build = None
-        self._data_stored = None
         self._workflow = None
+        self._data_stored = None
         self.discriminator = None
 
         self.build = build
-        self.data_stored = data_stored
         self.workflow = workflow
+        self.data_stored = data_stored
 
     @property
     def build(self):
@@ -79,31 +79,6 @@ class InspectionStatus(object):
         """
 
         self._build = build
-
-    @property
-    def data_stored(self):
-        """Gets the data_stored of this InspectionStatus.  # noqa: E501
-
-        A flag checking if any data were stored.  # noqa: E501
-
-        :return: The data_stored of this InspectionStatus.  # noqa: E501
-        :rtype: bool
-        """
-        return self._data_stored
-
-    @data_stored.setter
-    def data_stored(self, data_stored):
-        """Sets the data_stored of this InspectionStatus.
-
-        A flag checking if any data were stored.  # noqa: E501
-
-        :param data_stored: The data_stored of this InspectionStatus.  # noqa: E501
-        :type: bool
-        """
-        if self.local_vars_configuration.client_side_validation and data_stored is None:  # noqa: E501
-            raise ValueError("Invalid value for `data_stored`, must not be `None`")  # noqa: E501
-
-        self._data_stored = data_stored
 
     @property
     def workflow(self):
@@ -129,6 +104,31 @@ class InspectionStatus(object):
             raise ValueError("Invalid value for `workflow`, must not be `None`")  # noqa: E501
 
         self._workflow = workflow
+
+    @property
+    def data_stored(self):
+        """Gets the data_stored of this InspectionStatus.  # noqa: E501
+
+        A flag checking if any data were stored.  # noqa: E501
+
+        :return: The data_stored of this InspectionStatus.  # noqa: E501
+        :rtype: bool
+        """
+        return self._data_stored
+
+    @data_stored.setter
+    def data_stored(self, data_stored):
+        """Sets the data_stored of this InspectionStatus.
+
+        A flag checking if any data were stored.  # noqa: E501
+
+        :param data_stored: The data_stored of this InspectionStatus.  # noqa: E501
+        :type: bool
+        """
+        if self.local_vars_configuration.client_side_validation and data_stored is None:  # noqa: E501
+            raise ValueError("Invalid value for `data_stored`, must not be `None`")  # noqa: E501
+
+        self._data_stored = data_stored
 
     def to_dict(self):
         """Returns the model properties as a dict"""

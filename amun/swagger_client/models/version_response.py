@@ -33,52 +33,27 @@ class VersionResponse(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'service_version': 'str',
-        'version': 'str'
+        'version': 'str',
+        'service_version': 'str'
     }
 
     attribute_map = {
-        'service_version': 'service_version',
-        'version': 'version'
+        'version': 'version',
+        'service_version': 'service_version'
     }
 
-    def __init__(self, service_version=None, version=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, version=None, service_version=None, local_vars_configuration=None):  # noqa: E501
         """VersionResponse - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
-        self._service_version = None
         self._version = None
+        self._service_version = None
         self.discriminator = None
 
-        self.service_version = service_version
         self.version = version
-
-    @property
-    def service_version(self):
-        """Gets the service_version of this VersionResponse.  # noqa: E501
-
-        Service version identifier.  # noqa: E501
-
-        :return: The service_version of this VersionResponse.  # noqa: E501
-        :rtype: str
-        """
-        return self._service_version
-
-    @service_version.setter
-    def service_version(self, service_version):
-        """Sets the service_version of this VersionResponse.
-
-        Service version identifier.  # noqa: E501
-
-        :param service_version: The service_version of this VersionResponse.  # noqa: E501
-        :type: str
-        """
-        if self.local_vars_configuration.client_side_validation and service_version is None:  # noqa: E501
-            raise ValueError("Invalid value for `service_version`, must not be `None`")  # noqa: E501
-
-        self._service_version = service_version
+        self.service_version = service_version
 
     @property
     def version(self):
@@ -104,6 +79,31 @@ class VersionResponse(object):
             raise ValueError("Invalid value for `version`, must not be `None`")  # noqa: E501
 
         self._version = version
+
+    @property
+    def service_version(self):
+        """Gets the service_version of this VersionResponse.  # noqa: E501
+
+        Service version identifier.  # noqa: E501
+
+        :return: The service_version of this VersionResponse.  # noqa: E501
+        :rtype: str
+        """
+        return self._service_version
+
+    @service_version.setter
+    def service_version(self, service_version):
+        """Sets the service_version of this VersionResponse.
+
+        Service version identifier.  # noqa: E501
+
+        :param service_version: The service_version of this VersionResponse.  # noqa: E501
+        :type: str
+        """
+        if self.local_vars_configuration.client_side_validation and service_version is None:  # noqa: E501
+            raise ValueError("Invalid value for `service_version`, must not be `None`")  # noqa: E501
+
+        self._service_version = service_version
 
     def to_dict(self):
         """Returns the model properties as a dict"""

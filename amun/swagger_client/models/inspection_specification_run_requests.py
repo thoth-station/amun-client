@@ -34,33 +34,33 @@ class InspectionSpecificationRunRequests(object):
     """
     openapi_types = {
         'cpu': 'str',
-        'hardware': 'InspectionSpecificationRunRequestsHardware',
-        'memory': 'str'
+        'memory': 'str',
+        'hardware': 'InspectionSpecificationRunRequestsHardware'
     }
 
     attribute_map = {
         'cpu': 'cpu',
-        'hardware': 'hardware',
-        'memory': 'memory'
+        'memory': 'memory',
+        'hardware': 'hardware'
     }
 
-    def __init__(self, cpu=None, hardware=None, memory=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, cpu=None, memory=None, hardware=None, local_vars_configuration=None):  # noqa: E501
         """InspectionSpecificationRunRequests - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._cpu = None
-        self._hardware = None
         self._memory = None
+        self._hardware = None
         self.discriminator = None
 
         if cpu is not None:
             self.cpu = cpu
-        if hardware is not None:
-            self.hardware = hardware
         if memory is not None:
             self.memory = memory
+        if hardware is not None:
+            self.hardware = hardware
 
     @property
     def cpu(self):
@@ -89,27 +89,6 @@ class InspectionSpecificationRunRequests(object):
         self._cpu = cpu
 
     @property
-    def hardware(self):
-        """Gets the hardware of this InspectionSpecificationRunRequests.  # noqa: E501
-
-
-        :return: The hardware of this InspectionSpecificationRunRequests.  # noqa: E501
-        :rtype: InspectionSpecificationRunRequestsHardware
-        """
-        return self._hardware
-
-    @hardware.setter
-    def hardware(self, hardware):
-        """Sets the hardware of this InspectionSpecificationRunRequests.
-
-
-        :param hardware: The hardware of this InspectionSpecificationRunRequests.  # noqa: E501
-        :type: InspectionSpecificationRunRequestsHardware
-        """
-
-        self._hardware = hardware
-
-    @property
     def memory(self):
         """Gets the memory of this InspectionSpecificationRunRequests.  # noqa: E501
 
@@ -134,6 +113,27 @@ class InspectionSpecificationRunRequests(object):
             raise ValueError("Invalid value for `memory`, length must be greater than or equal to `1`")  # noqa: E501
 
         self._memory = memory
+
+    @property
+    def hardware(self):
+        """Gets the hardware of this InspectionSpecificationRunRequests.  # noqa: E501
+
+
+        :return: The hardware of this InspectionSpecificationRunRequests.  # noqa: E501
+        :rtype: InspectionSpecificationRunRequestsHardware
+        """
+        return self._hardware
+
+    @hardware.setter
+    def hardware(self, hardware):
+        """Sets the hardware of this InspectionSpecificationRunRequests.
+
+
+        :param hardware: The hardware of this InspectionSpecificationRunRequests.  # noqa: E501
+        :type: InspectionSpecificationRunRequestsHardware
+        """
+
+        self._hardware = hardware
 
     def to_dict(self):
         """Returns the model properties as a dict"""
